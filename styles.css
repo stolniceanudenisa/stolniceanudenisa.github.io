@@ -75,24 +75,19 @@ body {
   gap: 0.5rem;
   margin: 0;
   padding: 0;
-  color: var(--green);
+  color: var(--cyan);
   font-family: "Fira Code", monospace;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.6;
   text-decoration: none;
   text-transform: none;
   letter-spacing: normal;
 }
-.brand-name::before {
-  content: ">";
-  color: var(--green);
-  animation: navPromptBlink 1s step-end infinite;
-}
-@keyframes navPromptBlink {
-  50% {
-    opacity: 0;
-  }
+.brand-icon {
+  color: var(--cyan);
+  font-size: 1.2rem;
+  line-height: 1;
 }
 .navigation-links {
   display: flex;
