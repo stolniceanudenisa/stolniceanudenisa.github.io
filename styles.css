@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --header-height: 76px;
   --bg: #0a0a0f;
   --panel: #12121a;
@@ -28,7 +28,7 @@ body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Fira Code", monospace;
   line-height: 1.55;
 }
 .scanlines {
@@ -71,7 +71,7 @@ body {
 }
 .brand-name {
   font:
-    600 17px "JetBrains Mono",
+    600 17px "Fira Code",
     monospace;
   color: var(--text);
   text-decoration: none;
@@ -86,7 +86,7 @@ body {
 }
 .navigation-links a {
   font:
-    500 11px "JetBrains Mono",
+    500 11px "Fira Code",
     monospace;
   text-transform: uppercase;
   color: var(--muted);
@@ -107,7 +107,7 @@ body {
   background: none;
   border: 1px solid rgba(0, 255, 157, 0.4);
   font:
-    18px "JetBrains Mono",
+    18px "Fira Code",
     monospace;
   padding: 5px 9px;
 }
@@ -132,11 +132,11 @@ body {
   min-width: 0;
 }
 .hero-copy h1 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 .eyebrow {
   font:
-    600 11px "JetBrains Mono",
+    600 11px "Fira Code",
     monospace;
   color: var(--green);
   letter-spacing: 2px;
@@ -149,12 +149,11 @@ body {
   margin: 20px 0;
 }
 .hero-copy h1 span {
-  color: #2563eb;
-  text-shadow: 0 0 20px rgba(37, 99, 235, 0.25);
+  color: var(--cyan);
 }
 .hero-role {
   font:
-    600 clamp(18px, 2vw, 25px) "JetBrains Mono",
+    600 clamp(18px, 2vw, 25px) "Fira Code",
     monospace;
   color: var(--cyan);
   margin: 0 0 18px;
@@ -174,7 +173,7 @@ body {
   padding: 12px 17px;
   border: 1px solid rgba(0, 255, 157, 0.48);
   font:
-    600 11px "JetBrains Mono",
+    600 11px "Fira Code",
     monospace;
   text-transform: uppercase;
   text-decoration: none;
@@ -216,7 +215,7 @@ body {
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   color: var(--muted);
   font:
-    11px "JetBrains Mono",
+    11px "Fira Code",
     monospace;
 }
 .terminal-bar i {
@@ -240,7 +239,7 @@ body {
   padding: 25px;
   color: var(--green);
   font:
-    12px/2 "JetBrains Mono",
+    12px/2 "Fira Code",
     monospace;
   white-space: pre-wrap;
 }
@@ -272,7 +271,7 @@ section[id] {
 }
 .portfolio-section h3 {
   font:
-    600 12px "JetBrains Mono",
+    600 12px "Fira Code",
     monospace;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -335,7 +334,7 @@ section[id] {
 .link-card h3,
 .project-card h3 {
   font:
-    600 16px "Space Grotesk",
+    600 16px "Manrope",
     sans-serif;
   color: var(--text);
   margin: 10px 0 5px;
@@ -355,7 +354,7 @@ section[id] {
 .skill-category h3 {
   color: var(--text);
   font:
-    600 16px "Space Grotesk",
+    600 16px "Manrope",
     sans-serif;
   text-transform: none;
   letter-spacing: 0;
@@ -367,7 +366,7 @@ section[id] {
   color: var(--cyan);
   background: rgba(0, 212, 255, 0.07);
   font:
-    11px "JetBrains Mono",
+    11px "Fira Code",
     monospace;
 }
 .certification-card {
@@ -383,7 +382,7 @@ section[id] {
 .certification-card h3 {
   color: var(--text);
   font:
-    600 16px "Space Grotesk",
+    600 16px "Manrope",
     sans-serif;
   text-transform: none;
   letter-spacing: 0;
@@ -396,7 +395,7 @@ section[id] {
 }
 .card-actions a {
   font:
-    10px "JetBrains Mono",
+    10px "Fira Code",
     monospace;
   color: var(--green);
   border: 1px solid rgba(0, 255, 157, 0.35);
@@ -408,7 +407,7 @@ section[id] {
   right: 12px;
   color: var(--green);
   font:
-    10px "JetBrains Mono",
+    10px "Fira Code",
     monospace;
 }
 .experience-timeline {
@@ -435,7 +434,7 @@ section[id] {
 .experience-item h3 {
   color: var(--text);
   font:
-    600 19px "Space Grotesk",
+    600 19px "Manrope",
     sans-serif;
   text-transform: none;
   letter-spacing: 0;
@@ -444,7 +443,7 @@ section[id] {
 .meta {
   color: var(--cyan);
   font:
-    11px "JetBrains Mono",
+    11px "Fira Code",
     monospace;
   margin: 5px 0 13px;
 }
@@ -457,14 +456,14 @@ section[id] {
 .project-card .category {
   color: var(--purple);
   font:
-    10px "JetBrains Mono",
+    10px "Fira Code",
     monospace;
   text-transform: uppercase;
 }
 .project-tech {
   color: var(--cyan);
   font:
-    11px "JetBrains Mono",
+    11px "Fira Code",
     monospace;
   margin-top: 15px;
 }
@@ -477,7 +476,7 @@ section[id] {
   display: block;
   color: var(--cyan);
   font:
-    11px "JetBrains Mono",
+    11px "Fira Code",
     monospace;
   text-transform: uppercase;
 }
@@ -496,7 +495,7 @@ footer {
   padding: 25px 28px 45px;
   color: var(--muted);
   font:
-    11px "JetBrains Mono",
+    11px "Fira Code",
     monospace;
 }
 footer span {
@@ -576,3 +575,4 @@ footer span {
     margin-top: 8px;
   }
 }
+
