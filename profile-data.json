@@ -1,291 +1,45 @@
 {
   "name": "Denisa-Elena Stolniceanu",
+  "title": "Data Engineering & Cybersecurity",
   "heroRolePrimary": "Cybersecurity Enthusiast",
   "heroRoleSecondary": "Data Engineer",
   "heroDescription": "Data Engineer expanding my knowledge in cybersecurity engineering, defensive and offensive security, vulnerability management, cloud security, and the intersection between cybersecurity and artificial intelligence.",
-
   "location": "Romania",
+  "locationShort": "Romania",
   "email": "ADD_YOUR_EMAIL",
-  "website": "ADD_YOUR_GITHUB_IO_URL",
+  "website": "stolniceanudenisa.github.io",
   "linkedin": "ADD_YOUR_LINKEDIN_URL",
+  "linkedinShort": "ADD_YOUR_LINKEDIN_URL",
   "github": "ADD_YOUR_GITHUB_URL",
-
+  "githubShort": "ADD_YOUR_GITHUB_URL",
   "summary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
-
-  "about": [
-    "I am a Data Engineer with a strong passion for cybersecurity, data analysis, machine learning, computer vision, natural language processing, and Generative and Agentic AI.",
-    "I am actively expanding my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and security automation.",
-    "My interests also include exploring the intersection between cybersecurity and artificial intelligence, particularly in areas such as Agentic SOC, autonomous security agents, and Agentic Red Teaming.",
-    "I enjoy continuous self-learning and independent exploration, always seeking new ways to innovate and grow through practical projects, laboratories, courses, and cybersecurity research."
-  ],
-
-  "focusAreas": [
-    {
-      "title": "Cybersecurity Engineering",
-      "category": "Security",
-      "description": "Defensive and offensive security, vulnerability management, security engineering, cloud security, and security automation."
-    },
-    {
-      "title": "Data Engineering",
-      "category": "Data",
-      "description": "Data pipelines, data processing, analytics, automation, and scalable data solutions."
-    },
-    {
-      "title": "Artificial Intelligence",
-      "category": "AI",
-      "description": "Machine learning, computer vision, natural language processing, Generative AI, Agentic AI, and AI for cybersecurity."
-    }
-  ],
-
-  "links": [
-    {
-      "title": "LinkedIn",
-      "description": "Professional profile and career updates",
-      "url": "ADD_YOUR_LINKEDIN_URL",
-      "icon": "💼"
-    },
-    {
-      "title": "GitHub",
-      "description": "Projects, laboratories, and code repositories",
-      "url": "ADD_YOUR_GITHUB_URL",
-      "icon": "💻"
-    },
-    {
-      "title": "TryHackMe",
-      "description": "Cybersecurity learning paths and practical laboratories",
-      "url": "ADD_YOUR_TRYHACKME_URL",
-      "icon": "🎯"
-    },
-    {
-      "title": "Credly",
-      "description": "Verified professional badges and certifications",
-      "url": "ADD_YOUR_CREDLY_URL",
-      "icon": "🏅"
-    },
-    {
-      "title": "Microsoft Learn",
-      "description": "Microsoft cloud and security learning profile",
-      "url": "ADD_YOUR_MICROSOFT_LEARN_URL",
-      "icon": "☁️"
-    },
-    {
-      "title": "Portfolio Projects",
-      "description": "Selected cybersecurity, data, cloud, and AI projects",
-      "url": "projects.html",
-      "icon": "🧪"
-    }
-  ],
-
+  "cvSummary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
   "skills": [
-    {
-      "category": "Cybersecurity",
-      "tags": [
-        "Defensive Security",
-        "Offensive Security",
-        "Vulnerability Management",
-        "Security Engineering",
-        "Incident Response",
-        "Threat Analysis",
-        "Security Automation"
-      ]
-    },
-    {
-      "category": "Cloud Security",
-      "tags": [
-        "AWS",
-        "Microsoft Azure",
-        "Identity and Access Management",
-        "Cloud Security Fundamentals",
-        "Security Monitoring",
-        "Cloud Misconfigurations"
-      ]
-    },
-    {
-      "category": "Security Operations",
-      "tags": [
-        "SIEM",
-        "EDR",
-        "XDR",
-        "SOC Operations",
-        "Alert Investigation",
-        "Detection Engineering",
-        "Agentic SOC"
-      ]
-    },
-    {
-      "category": "Offensive Security",
-      "tags": [
-        "Network Enumeration",
-        "Web Security Fundamentals",
-        "Privilege Escalation",
-        "Active Directory Fundamentals",
-        "Penetration Testing",
-        "Red Teaming Fundamentals"
-      ]
-    },
-    {
-      "category": "Data Engineering",
-      "tags": [
-        "Data Pipelines",
-        "ETL",
-        "Data Processing",
-        "Data Analysis",
-        "SQL",
-        "Python",
-        "Automation"
-      ]
-    },
-    {
-      "category": "Artificial Intelligence",
-      "tags": [
-        "Machine Learning",
-        "Computer Vision",
-        "Natural Language Processing",
-        "Generative AI",
-        "Agentic AI",
-        "AI for Cybersecurity",
-        "Agentic Red Teaming"
-      ]
-    }
+    { "category": "Cybersecurity", "tags": ["Defensive Security", "Offensive Security", "Vulnerability Management", "Security Engineering", "Incident Response", "Threat Analysis", "Security Automation"] },
+    { "category": "Cloud Security", "tags": ["AWS", "Microsoft Azure", "Identity and Access Management", "Cloud Security Fundamentals", "Security Monitoring", "Cloud Misconfigurations"] },
+    { "category": "Security Operations", "tags": ["SIEM", "EDR", "XDR", "SOC Operations", "Alert Investigation", "Detection Engineering", "Agentic SOC"] },
+    { "category": "Offensive Security", "tags": ["Network Enumeration", "Web Security Fundamentals", "Privilege Escalation", "Active Directory Fundamentals", "Penetration Testing", "Red Teaming Fundamentals"] },
+    { "category": "Data Engineering", "tags": ["Data Pipelines", "ETL", "Data Processing", "Data Analysis", "SQL", "Python", "Automation"] },
+    { "category": "Artificial Intelligence", "tags": ["Machine Learning", "Computer Vision", "Natural Language Processing", "Generative AI", "Agentic AI", "AI for Cybersecurity", "Agentic Red Teaming"] }
   ],
-
   "certifications": [
-    {
-      "shortName": "eJPT",
-      "fullName": "eLearnSecurity Junior Penetration Tester",
-      "issuer": "INE Security",
-      "credentialUrl": "ADD_EJPT_CREDENTIAL_URL",
-      "examUrl": "https://security.ine.com/certifications/ejpt-certification/",
-      "badgeImage": "images/badges/ejpt.png",
-      "featured": true
-    },
-    {
-      "shortName": "AWS MLA-C01",
-      "fullName": "AWS Certified Machine Learning Engineer – Associate",
-      "issuer": "Amazon Web Services",
-      "credentialUrl": "ADD_AWS_ML_CREDENTIAL_URL",
-      "examUrl": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/",
-      "badgeImage": "images/badges/aws-ml-associate.png",
-      "featured": true
-    },
-    {
-      "shortName": "AWS AIF-C01",
-      "fullName": "AWS Certified AI Practitioner",
-      "issuer": "Amazon Web Services",
-      "credentialUrl": "ADD_AWS_AI_PRACTITIONER_CREDENTIAL_URL",
-      "examUrl": "https://aws.amazon.com/certification/certified-ai-practitioner/",
-      "badgeImage": "images/badges/aws-ai-practitioner.png",
-      "featured": true
-    },
-    {
-      "shortName": "Google AI",
-      "fullName": "ADD_EXACT_GOOGLE_AI_CERTIFICATION_NAME",
-      "issuer": "Google",
-      "credentialUrl": "ADD_GOOGLE_AI_CREDENTIAL_URL",
-      "examUrl": "ADD_GOOGLE_AI_OFFICIAL_URL",
-      "badgeImage": "images/badges/google-ai.png",
-      "featured": true
-    }
+    { "shortName": "eJPT", "fullName": "eLearnSecurity Junior Penetration Tester", "issuer": "INE Security", "credentialUrl": "ADD_EJPT_CREDENTIAL_URL", "examUrl": "https://security.ine.com/certifications/ejpt-certification/", "badgeImage": "images/badges/ejpt.png", "featured": true },
+    { "shortName": "AWS MLA-C01", "fullName": "AWS Certified Machine Learning Engineer – Associate", "issuer": "Amazon Web Services", "credentialUrl": "ADD_AWS_ML_CREDENTIAL_URL", "examUrl": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/", "badgeImage": "images/badges/aws-ml-associate.png", "featured": true },
+    { "shortName": "AWS AIF-C01", "fullName": "AWS Certified AI Practitioner", "issuer": "Amazon Web Services", "credentialUrl": "ADD_AWS_AI_PRACTITIONER_CREDENTIAL_URL", "examUrl": "https://aws.amazon.com/certification/certified-ai-practitioner/", "badgeImage": "images/badges/aws-ai-practitioner.png", "featured": true },
+    { "shortName": "Google AI", "fullName": "ADD_EXACT_GOOGLE_AI_CERTIFICATION_NAME", "issuer": "Google", "credentialUrl": "ADD_GOOGLE_AI_CREDENTIAL_URL", "examUrl": "ADD_GOOGLE_AI_OFFICIAL_URL", "badgeImage": "images/badges/google-ai.png", "featured": true }
   ],
-
+  "issuerLogos": {
+    "INE Security": { "src": "images/brands/ine-security.png", "cvSrc": "images/brands/ine-security-cv.png" },
+    "Amazon Web Services": { "src": "images/brands/aws.png", "cvSrc": "images/brands/aws-cv.png" },
+    "Google": { "src": "images/brands/google.png", "cvSrc": "images/brands/google-cv.png" }
+  },
   "experience": [
-    {
-      "title": "Data Engineer",
-      "company": "Endava",
-      "location": "Romania",
-      "startDate": "ADD_START_DATE",
-      "endDate": "Present",
-      "current": true,
-      "responsibilities": [
-        "ADD_YOUR_FIRST_DATA_ENGINEERING_RESPONSIBILITY",
-        "ADD_YOUR_SECOND_DATA_ENGINEERING_RESPONSIBILITY",
-        "ADD_TECHNOLOGIES_OR_PLATFORMS_USED",
-        "ADD_A_MEASURABLE_RESULT_OR_PROJECT_IMPACT"
-      ]
-    },
-    {
-      "title": "ADD_PREVIOUS_JOB_TITLE",
-      "company": "ADD_PREVIOUS_COMPANY",
-      "location": "ADD_LOCATION",
-      "startDate": "ADD_START_DATE",
-      "endDate": "ADD_END_DATE",
-      "current": false,
-      "responsibilities": [
-        "ADD_RESPONSIBILITY",
-        "ADD_RESPONSIBILITY",
-        "ADD_PROJECT_OR_RESULT"
-      ]
-    }
+    { "title": "Data Engineer", "company": "Endava", "location": "Romania", "startDate": "ADD_START_DATE", "endDate": "Present", "current": true, "responsibilities": ["ADD_YOUR_FIRST_DATA_ENGINEERING_RESPONSIBILITY", "ADD_YOUR_SECOND_DATA_ENGINEERING_RESPONSIBILITY", "ADD_TECHNOLOGIES_OR_PLATFORMS_USED", "ADD_A_MEASURABLE_RESULT_OR_PROJECT_IMPACT"] },
+    { "title": "ADD_PREVIOUS_JOB_TITLE", "company": "ADD_PREVIOUS_COMPANY", "location": "ADD_LOCATION", "startDate": "ADD_START_DATE", "endDate": "ADD_END_DATE", "current": false, "responsibilities": ["ADD_RESPONSIBILITY", "ADD_RESPONSIBILITY", "ADD_PROJECT_OR_RESULT"] }
   ],
-
   "education": [
-    {
-      "degree": "EIT Digital Master School – Cybersecurity",
-      "school": "University of Twente",
-      "location": "Netherlands",
-      "startYear": "ADD_START_YEAR",
-      "endYear": "ADD_END_YEAR",
-      "status": "Current"
-    },
-    {
-      "degree": "ADD_PREVIOUS_DEGREE",
-      "school": "ADD_UNIVERSITY",
-      "location": "ADD_LOCATION",
-      "startYear": "ADD_START_YEAR",
-      "endYear": "ADD_END_YEAR",
-      "status": "Completed"
-    }
+    { "degree": "EIT Digital Master School – Cybersecurity", "school": "University of Twente", "location": "Netherlands", "startYear": "ADD_START_YEAR", "endYear": "ADD_END_YEAR", "status": "Current" },
+    { "degree": "ADD_PREVIOUS_DEGREE", "school": "ADD_UNIVERSITY", "location": "ADD_LOCATION", "startYear": "ADD_START_YEAR", "endYear": "ADD_END_YEAR", "status": "Completed" }
   ],
-
-  "projects": [
-    {
-      "title": "VDR Document Anonymisation and Redaction",
-      "category": "Cybersecurity Engineering",
-      "description": "A document anonymisation and redaction application for identifying and masking sensitive information in PDF, DOCX, XLSX, and PPTX files while preserving document structure.",
-      "technologies": [
-        "Python",
-        "Streamlit",
-        "Microsoft Presidio",
-        "Document Processing",
-        "PII Detection"
-      ],
-      "url": "ADD_PROJECT_URL",
-      "featured": true
-    },
-    {
-      "title": "Agentic SOC Research",
-      "category": "AI for Cybersecurity",
-      "description": "Research into agentic AI architectures for SOC automation, including alert normalisation, enrichment, investigation, response planning, and secure autonomous agents.",
-      "technologies": [
-        "Agentic AI",
-        "SOC Automation",
-        "SIEM",
-        "Cybersecurity Research"
-      ],
-      "url": "ADD_PROJECT_OR_DOCUMENT_URL",
-      "featured": true
-    },
-    {
-      "title": "ADD_PROJECT_NAME",
-      "category": "ADD_CATEGORY",
-      "description": "ADD_PROJECT_DESCRIPTION",
-      "technologies": [
-        "ADD_TECHNOLOGY",
-        "ADD_TECHNOLOGY"
-      ],
-      "url": "ADD_PROJECT_URL",
-      "featured": false
-    }
-  ],
-
-  "languages": [
-    {
-      "name": "Romanian",
-      "level": "Native"
-    },
-    {
-      "name": "English",
-      "level": "Professional proficiency"
-    }
-  ]
+  "languages": [{ "name": "Romanian", "level": "Native" }, { "name": "English", "level": "Professional proficiency" }]
 }
