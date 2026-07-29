@@ -28,7 +28,7 @@ body {
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: "Fira Code", monospace;
+  font-family: "Inter", sans-serif;
   line-height: 1.55;
 }
 .scanlines {
@@ -58,7 +58,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 2rem;
+  padding: 1rem 2rem;
 }
 .navigation-wrapper {
   width: 100%;
@@ -67,49 +67,71 @@ body {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 .brand-name {
-  font:
-    600 17px "Fira Code",
-    monospace;
-  color: var(--text);
-  text-decoration: none;
-}
-.brand-name span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
   color: var(--green);
+  font-family: "Fira Code", monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.brand-name::before {
+  content: ">";
+  color: var(--green);
+  animation: navPromptBlink 1s step-end infinite;
+}
+@keyframes navPromptBlink {
+  50% {
+    opacity: 0;
+  }
 }
 .navigation-links {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 .navigation-links a {
-  font:
-    500 11px "Fira Code",
-    monospace;
-  text-transform: uppercase;
+  padding: 0;
   color: var(--muted);
+  font-family: "Fira Code", monospace;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: normal;
+  text-transform: none;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 .navigation-links a:hover,
 .navigation-links a.active {
   color: var(--green);
 }
-.navigation-links a:last-child {
+.navigation-cv-link {
+  font-size: 0.8rem;
+  font-weight: 400;
   color: var(--green);
   border: 1px solid rgba(0, 255, 157, 0.4);
   padding: 8px 11px;
 }
 .navigation-toggle {
   display: none;
-  color: var(--green);
+  border: none;
   background: none;
-  border: 1px solid rgba(0, 255, 157, 0.4);
-  font:
-    18px "Fira Code",
-    monospace;
-  padding: 5px 9px;
+  color: var(--green);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 .hero-section,
 .portfolio-section {
@@ -132,7 +154,7 @@ body {
   min-width: 0;
 }
 .hero-copy h1 {
-  font-family: "Manrope", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .eyebrow {
   font:
@@ -197,6 +219,10 @@ body {
   background: var(--panel);
   border: 1px solid rgba(0, 255, 157, 0.14);
   transition: 0.2s;
+}
+.terminal-card,
+.terminal-card * {
+  font-family: "Fira Code", monospace;
 }
 .terminal-card:hover,
 .link-card:hover,
@@ -334,7 +360,7 @@ section[id] {
 .link-card h3,
 .project-card h3 {
   font:
-    600 16px "Manrope",
+    600 16px "Inter",
     sans-serif;
   color: var(--text);
   margin: 10px 0 5px;
@@ -354,7 +380,7 @@ section[id] {
 .skill-category h3 {
   color: var(--text);
   font:
-    600 16px "Manrope",
+    600 16px "Inter",
     sans-serif;
   text-transform: none;
   letter-spacing: 0;
@@ -382,7 +408,7 @@ section[id] {
 .certification-card h3 {
   color: var(--text);
   font:
-    600 16px "Manrope",
+    600 16px "Inter",
     sans-serif;
   text-transform: none;
   letter-spacing: 0;
@@ -434,7 +460,7 @@ section[id] {
 .experience-item h3 {
   color: var(--text);
   font:
-    600 19px "Manrope",
+    600 19px "Inter",
     sans-serif;
   text-transform: none;
   letter-spacing: 0;
@@ -575,4 +601,6 @@ footer span {
     margin-top: 8px;
   }
 }
+
+
 
