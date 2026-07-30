@@ -71,6 +71,9 @@ main {
 main > section:not(#hero) {
   background-color: #111827;
 }
+#hero {
+  background-color: #0b1120;
+}
 .navigation {
   height: 100%;
   display: flex;
@@ -93,7 +96,7 @@ main > section:not(#hero) {
   margin: 0;
   padding: 0;
   color: var(--cyan);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.6;
@@ -117,7 +120,7 @@ main > section:not(#hero) {
 .navigation-links a {
   padding: 0;
   color: var(--muted);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 1.6;
@@ -145,15 +148,14 @@ main > section:not(#hero) {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.portfolio-section,
 .section-container,
 section > .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 .hero-section {
   width: 100%;
@@ -161,9 +163,8 @@ section > .container {
   margin: 0;
   position: relative;
   overflow: hidden;
-  background: #111827;
-  min-height: calc(100vh - 80px);
-  min-height: calc(100svh - 80px);
+  background: #0b1120;
+  min-height: 100vh;
   padding: var(--header-height) 0 0;
   display: block;
 }
@@ -171,10 +172,10 @@ section > .container {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 24px;
+  padding-right: 24px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
   align-items: center;
@@ -186,7 +187,7 @@ section > .container {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: #111827;
+  background: #0b1120;
   opacity: 0.32;
   pointer-events: none;
 }
@@ -350,18 +351,28 @@ section > .container {
   white-space: pre-wrap;
 }
 .portfolio-section {
-  padding-top: 110px;
-  padding-bottom: 70px;
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 section[id] {
   scroll-margin-top: calc(var(--header-height) + 20px);
 }
 section {
   width: 100%;
+  max-width: none;
+  margin: 0;
+}
+.portfolio-section > * {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 .section-heading {
   display: block;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   text-align: left;
 }
 .section-heading h2 {
@@ -371,7 +382,7 @@ section {
   padding-bottom: 1rem;
   color: var(--text-primary);
   font-family: var(--font-sans);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -702,8 +713,9 @@ section {
   font-size: 14px;
 }
 footer {
-  max-width: 1120px;
-  margin: auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   padding: 25px 28px 45px;
   background-color: #111827;
   color: var(--muted);
@@ -1072,10 +1084,6 @@ footer span {
   }
 }
 @media (max-width: 520px) {
-  .portfolio-section {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   .hero-container {
     padding-left: 20px;
     padding-right: 20px;
@@ -1151,17 +1159,24 @@ footer span {
   }
 }
 @media (max-width: 768px) {
-  .portfolio-section,
+  section:not(.hero-section) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
   .section-container,
-  section > .container {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  section > .container,
+  .hero-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .section-heading {
+    margin-bottom: 2.5rem;
   }
 }
 @media (max-width: 480px) {
-  .portfolio-section,
   .section-container,
-  section > .container {
+  section > .container,
+  .hero-container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
