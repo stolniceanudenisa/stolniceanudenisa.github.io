@@ -220,8 +220,8 @@ section > .container {
   text-align: left;
   animation: heroTextEnter 0.8s ease-out both;
 }
-.hero-copy h1,
-.hero-role,
+.hero-name,
+.hero-subtitle,
 .hero-description {
   text-align: left;
 }
@@ -612,29 +612,38 @@ section > .container {
     animation: none;
   }
 }
-.hero-copy h1 {
+.hero-intro {
+  font-family: var(--font-mono);
+  color: #7dd3fc;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+h1.hero-name {
+  color: #f1f5f9;
   font-family: var(--font-sans);
+  font-size: clamp(2.8rem, 5.5vw + 1rem, 4.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin: 0 0 0.5rem;
+  overflow-wrap: anywhere;
 }
-.hero-copy h1 {
-  font-size: clamp(34px, 4.8vw, 62px);
-  line-height: 1.02;
-  letter-spacing: -4px;
-  margin: 20px 0;
-}
-.hero-copy h1 span {
-  color: var(--cyan);
-}
-.hero-role {
-  font:
-    600 clamp(18px, 2vw, 25px) var(--font-mono),
-    monospace;
-  color: var(--cyan);
-  margin: 0 0 18px;
+.hero-subtitle {
+  color: #cbd5e1;
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 3.2vw, 2rem);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 1.75rem;
 }
 .hero-description {
-  max-width: 760px;
-  color: var(--muted);
-  font-size: 17px;
+  color: #cbd5e1;
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.9;
+  max-width: 68ch;
+  margin: 0;
 }
 .hero-actions {
   display: flex;
@@ -1598,8 +1607,8 @@ footer span {
     text-align: center;
     align-items: center;
   }
-  .hero-copy h1,
-  .hero-role,
+  .hero-name,
+  .hero-subtitle,
   .hero-description {
     text-align: center;
   }
@@ -1631,7 +1640,7 @@ footer span {
     padding-left: 20px;
     padding-right: 20px;
   }
-  .hero-copy h1 {
+  .hero-name {
     letter-spacing: -2px;
   }
   .section-grid,
@@ -1740,6 +1749,4 @@ footer span {
     padding-right: 20px;
   }
 }
-
-
 
