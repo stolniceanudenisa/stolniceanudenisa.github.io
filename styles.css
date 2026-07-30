@@ -143,11 +143,20 @@ main > section:not(#hero) {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.hero-section,
-.portfolio-section {
+.hero-section {
   max-width: 1120px;
   margin: auto;
   padding: 0 28px;
+}
+.portfolio-section,
+.section-container,
+section > .container {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 .hero-section {
   position: relative;
@@ -342,6 +351,9 @@ main > section:not(#hero) {
 section[id] {
   scroll-margin-top: calc(var(--header-height) + 20px);
 }
+section {
+  width: 100%;
+}
 .section-heading {
   display: block;
   margin-bottom: 3rem;
@@ -375,10 +387,17 @@ section[id] {
   grid-template-columns: 1fr 1fr;
   gap: 70px;
 }
+.about-content {
+  width: 100%;
+  max-width: none;
+  grid-column: 1 / -1;
+}
 .about-content p {
   color: var(--muted);
   font-size: 16px;
   margin: 0 0 17px;
+  width: 100%;
+  max-width: none;
 }
 .interests-grid {
   display: grid;
@@ -911,8 +930,8 @@ footer span {
   position: relative;
 }
 .education-box {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   padding: 2.5rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
@@ -1117,6 +1136,22 @@ footer span {
   }
   .education-item {
     padding: 1.25rem 1rem 1.25rem 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-section,
+  .section-container,
+  section > .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .portfolio-section,
+  .section-container,
+  section > .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
