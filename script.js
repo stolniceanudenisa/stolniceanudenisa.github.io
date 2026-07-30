@@ -137,13 +137,6 @@
           `<div class="language">${escapeHtml(item.name || "")} · ${escapeHtml(item.level || "")}</div>`,
       )
       .join("");
-    $("#linksGrid").innerHTML = list(profile.links)
-      .filter((link) => validUrl(link.url))
-      .map(
-        (link) =>
-          `<article class="link-card"><div class="link-icon">${escapeHtml(link.icon || "↗")}</div><h3>${escapeHtml(link.title || "")}</h3><p>${escapeHtml(link.description || "")}</p><a href="${escapeHtml(external(link.url))}" target="_blank" rel="noopener noreferrer">Open link ↗</a></article>`,
-      )
-      .join("");
     $("#skillsGrid").innerHTML = list(profile.skills)
       .map(
         (skill) =>
@@ -169,20 +162,7 @@
           }</article>`,
       )
       .join("");
-    $("#projectsGrid").innerHTML = list(profile.projects)
-      .filter((project) => publicValue(project.title))
-      .map(
-        (project) =>
-          `<article class="project-card">${project.featured ? '<span class="featured">FEATURED</span>' : ""}<div class="category">${escapeHtml(publicValue(project.category))}</div><h3>${escapeHtml(publicValue(project.title))}</h3><p>${escapeHtml(publicValue(project.description))}</p><div class="project-tech">${list(
-            project.technologies,
-          )
-            .filter((t) => publicValue(t))
-            .map((t) => escapeHtml(publicValue(t)))
-            .join(
-              " · ",
-            )}</div>${validUrl(project.url) ? `<div class="card-actions"><a href="${escapeHtml(external(project.url))}" target="_blank" rel="noopener noreferrer">View Project ↗</a></div>` : ""}</article>`,
-      )
-      .join("");
+    // Project cards remain editable placeholders until their final data is supplied.
     const contacts = [
       ["Email", profile.email, profile.email && `mailto:${profile.email}`],
       ["LinkedIn", profile.linkedin, profile.linkedin],
@@ -254,6 +234,16 @@
                 .querySelectorAll(".certification-card")
                 .forEach((card) => card.classList.add("is-visible"));
             }
+            if (entry.target.id === "projects") {
+              entry.target
+                .querySelectorAll(".project-card")
+                .forEach((card) => card.classList.add("is-visible"));
+            }
+            if (entry.target.id === "education") {
+              entry.target
+                .querySelectorAll(".education-item")
+                .forEach((item) => item.classList.add("is-visible"));
+            }
           }
         }),
       { rootMargin: "-25% 0px -60% 0px" },
@@ -265,6 +255,9 @@
     setupNavigation();
     document
       .querySelectorAll('.certification-link[aria-disabled="true"]')
+      .forEach((link) => link.addEventListener("click", (event) => event.preventDefault()));
+    document
+      .querySelectorAll('.project-link[aria-disabled="true"]')
       .forEach((link) => link.addEventListener("click", (event) => event.preventDefault()));
     $("#currentYear").textContent = new Date().getFullYear();
     const brandLink = document.querySelector(".brand-name");
