@@ -1,33 +1,289 @@
 (() => {
-  'use strict';
+  "use strict";
   const $ = (selector) => document.querySelector(selector);
-  const list = (value) => Array.isArray(value) ? value : [];
-  const clean = (value) => value == null ? '' : String(value);
-  const escapeHtml = (value) => clean(value).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  const validUrl = (url) => { const value=clean(url); return value && value !== '#' && !value.startsWith('ADD_') && !value.includes('PLACEHOLDER'); };
-  const publicValue = (value) => clean(value).startsWith('ADD_') || clean(value).includes('PLACEHOLDER') ? '' : clean(value);
-  function resolveAssetPath(path) { if (!path) return ''; if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) return path; return path.replace(/^\.?\//, ''); }
+  const list = (value) => (Array.isArray(value) ? value : []);
+  const clean = (value) => (value == null ? "" : String(value));
+  const escapeHtml = (value) =>
+    clean(value).replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    );
+  const validUrl = (url) => {
+    const value = clean(url);
+    return (
+      value &&
+      value !== "#" &&
+      !value.startsWith("ADD_") &&
+      !value.includes("PLACEHOLDER")
+    );
+  };
+  const publicValue = (value) =>
+    clean(value).startsWith("ADD_") || clean(value).includes("PLACEHOLDER")
+      ? ""
+      : clean(value);
+  function resolveAssetPath(path) {
+    if (!path) return "";
+    if (
+      path.startsWith("http://") ||
+      path.startsWith("https://") ||
+      path.startsWith("data:")
+    )
+      return path;
+    return path.replace(/^\.?\//, "");
+  }
   window.resolveAssetPath = resolveAssetPath;
-  const external = (url) => { const value=clean(url); return value.startsWith('http') ? value : `https://${value}`; };
-  const range = (item) => `${clean(item.startDate)}${item.startDate || item.endDate || item.current ? ' – ' : ''}${item.current ? 'Present' : clean(item.endDate)}`;
+  const external = (url) => {
+    const value = clean(url);
+    return value.startsWith("http") ? value : `https://${value}`;
+  };
+  const range = (item) =>
+    `${clean(item.startDate)}${item.startDate || item.endDate || item.current ? " – " : ""}${item.current ? "Present" : clean(item.endDate)}`;
+  function initializeParticles() {
+    const container = document.getElementById("particles-js");
+    if (!container || typeof particlesJS !== "function") return;
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 100, density: { enable: true, value_area: 800 } },
+        color: { value: "#a3d7f7" },
+        shape: { type: "circle" },
+        opacity: {
+          value: 0.75,
+          random: true,
+          anim: { enable: true, speed: 0.6, opacity_min: 0.25, sync: false },
+        },
+        size: {
+          value: 4,
+          random: true,
+          anim: { enable: true, speed: 3, size_min: 2, sync: false },
+        },
+        line_linked: {
+          enable: true,
+          distance: 160,
+          color: "#52627a",
+          opacity: 0.3,
+          width: 1,
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: true,
+          straight: false,
+          out_mode: "out",
+          bounce: false,
+        },
+      },
+      interactivity: {
+        detect_on: "canvas",
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" },
+          resize: true,
+        },
+        modes: {
+          grab: { distance: 150, line_linked: { opacity: 0.7 } },
+          push: { particles_nb: 4 },
+        },
+      },
+      retina_detect: true,
+    });
+  }
   const render = (profile) => {
     window._profileData = profile;
-    $('#profileName').textContent = profile.name || 'Your Name';
-    $('#profileRole').textContent = [profile.heroRolePrimary, profile.heroRoleSecondary].filter(Boolean).join(' & ') || profile.title || '';
-    $('#profileDescription').textContent = profile.heroDescription || profile.summary || '';
-    $('#terminalOutput').textContent = `$ whoami\n${profile.name || 'profile'}\n\n$ focus --list\n${[...(profile.focusAreas || []).map((f)=>f.title), 'AI for Cybersecurity'].filter(Boolean).map((x)=>`> ${x}`).join('\n')}\n\n$ status\nOPEN TO MEANINGFUL WORK`;
-    $('#aboutContent').innerHTML = list(profile.about).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('') || `<p>${escapeHtml(profile.summary || '')}</p>`;
-    $('#focusCards').innerHTML = list(profile.focusAreas).map((focus) => `<div class="focus-card"><strong>${escapeHtml(focus.title || '')}</strong><span>${escapeHtml(focus.description || '')}</span></div>`).join('');
-    $('#educationPreview').innerHTML = list(profile.education).filter((item)=>publicValue(item.degree)||publicValue(item.school)).map((item) => `<div class="preview-item"><strong>${escapeHtml(publicValue(item.degree))}</strong><br>${escapeHtml(publicValue(item.school))}</div>`).join('');
-    $('#languagesPreview').innerHTML = list(profile.languages).map((item) => `<div class="language">${escapeHtml(item.name || '')} · ${escapeHtml(item.level || '')}</div>`).join('');
-    $('#linksGrid').innerHTML = list(profile.links).filter((link)=>validUrl(link.url)).map((link) => `<article class="link-card"><div class="link-icon">${escapeHtml(link.icon || '↗')}</div><h3>${escapeHtml(link.title || '')}</h3><p>${escapeHtml(link.description || '')}</p><a href="${escapeHtml(external(link.url))}" target="_blank" rel="noopener noreferrer">Open link ↗</a></article>`).join('');
-    $('#skillsGrid').innerHTML = list(profile.skills).map((skill) => `<article class="skill-category"><h3>${escapeHtml(skill.category || '')}</h3><div>${list(skill.tags).map((tag)=>`<span class="skill-tag">${escapeHtml(tag)}</span>`).join('')}</div></article>`).join('');
-    $('#certificationsGrid').innerHTML = list(profile.certifications).map((cert) => { const credential=validUrl(cert.credentialUrl), exam=validUrl(cert.examUrl); return `<article class="certification-card">${cert.featured?'<span class="featured">FEATURED</span>':''}<img src="${escapeHtml(resolveAssetPath(cert.badgeImage))}" alt="${escapeHtml(cert.shortName || '')}" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div hidden class="skill-tag">${escapeHtml(cert.shortName || 'Certification')}</div><h3>${escapeHtml(cert.shortName || '')}</h3><p>${escapeHtml(publicValue(cert.fullName))}<br><span>${escapeHtml(publicValue(cert.issuer))}</span></p><div class="card-actions">${credential?`<a href="${escapeHtml(external(cert.credentialUrl))}" target="_blank" rel="noopener noreferrer">View Credential ↗</a>`:''}${exam?`<a href="${escapeHtml(external(cert.examUrl))}" target="_blank" rel="noopener noreferrer">Exam Information ↗</a>`:''}</div></article>`; }).join('');
-    $('#experienceTimeline').innerHTML = list(profile.experience).filter((item)=>publicValue(item.title)||publicValue(item.company)).map((item) => `<article class="experience-item"><h3>${escapeHtml(publicValue(item.title))}</h3><div class="meta">${escapeHtml(publicValue(item.company))}${publicValue(item.location) ? ` · ${escapeHtml(publicValue(item.location))}` : ''}${range(item) ? ` · ${escapeHtml(range(item))}` : ''}</div>${list(item.responsibilities).filter((r)=>publicValue(r)).length ? `<ul>${list(item.responsibilities).filter((r)=>publicValue(r)).map((r)=>`<li>${escapeHtml(publicValue(r))}</li>`).join('')}</ul>` : ''}</article>`).join('');
-    $('#projectsGrid').innerHTML = list(profile.projects).filter((project)=>publicValue(project.title)).map((project) => `<article class="project-card">${project.featured?'<span class="featured">FEATURED</span>':''}<div class="category">${escapeHtml(publicValue(project.category))}</div><h3>${escapeHtml(publicValue(project.title))}</h3><p>${escapeHtml(publicValue(project.description))}</p><div class="project-tech">${list(project.technologies).filter((t)=>publicValue(t)).map((t)=>escapeHtml(publicValue(t))).join(' · ')}</div>${validUrl(project.url)?`<div class="card-actions"><a href="${escapeHtml(external(project.url))}" target="_blank" rel="noopener noreferrer">View Project ↗</a></div>`:''}</article>`).join('');
-    const contacts = [['Email', profile.email, profile.email && `mailto:${profile.email}`],['LinkedIn', profile.linkedin, profile.linkedin],['GitHub', profile.github, profile.github],['Location', profile.location, ''],['Website', profile.website, profile.website && external(profile.website)]];
-    $('#contactDetails').innerHTML = contacts.filter(([,value])=>validUrl(value) || (value && !clean(value).startsWith('ADD_'))).map(([label,value,href]) => `<div class="contact-card"><strong>${label}</strong>${href ? `<a href="${escapeHtml(label==='Email'?href:external(href))}" ${label!=='Email'?'target="_blank" rel="noopener noreferrer"':''}>${escapeHtml(value)}</a>` : `<span>${escapeHtml(value)}</span>`}</div>`).join('');
+    $("#profileName").textContent = profile.name || "Your Name";
+    $("#profileRole").textContent =
+      [profile.heroRolePrimary, profile.heroRoleSecondary]
+        .filter(Boolean)
+        .join(" & ") ||
+      profile.title ||
+      "";
+    $("#profileDescription").textContent =
+      profile.heroDescription || profile.summary || "";
+    $("#terminalOutput").textContent =
+      `$ whoami\n${profile.name || "profile"}\n\n$ focus --list\n${[
+        ...(profile.focusAreas || []).map((f) => f.title),
+        "AI for Cybersecurity",
+      ]
+        .filter(Boolean)
+        .map((x) => `> ${x}`)
+        .join("\n")}\n\n$ status\nOPEN TO MEANINGFUL WORK`;
+    $("#aboutContent").innerHTML =
+      list(profile.about)
+        .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
+        .join("") || `<p>${escapeHtml(profile.summary || "")}</p>`;
+    $("#focusCards").innerHTML = list(profile.focusAreas)
+      .map(
+        (focus) =>
+          `<div class="focus-card"><strong>${escapeHtml(focus.title || "")}</strong><span>${escapeHtml(focus.description || "")}</span></div>`,
+      )
+      .join("");
+    $("#educationPreview").innerHTML = list(profile.education)
+      .filter((item) => publicValue(item.degree) || publicValue(item.school))
+      .map(
+        (item) =>
+          `<div class="preview-item"><strong>${escapeHtml(publicValue(item.degree))}</strong><br>${escapeHtml(publicValue(item.school))}</div>`,
+      )
+      .join("");
+    $("#languagesPreview").innerHTML = list(profile.languages)
+      .map(
+        (item) =>
+          `<div class="language">${escapeHtml(item.name || "")} · ${escapeHtml(item.level || "")}</div>`,
+      )
+      .join("");
+    $("#linksGrid").innerHTML = list(profile.links)
+      .filter((link) => validUrl(link.url))
+      .map(
+        (link) =>
+          `<article class="link-card"><div class="link-icon">${escapeHtml(link.icon || "↗")}</div><h3>${escapeHtml(link.title || "")}</h3><p>${escapeHtml(link.description || "")}</p><a href="${escapeHtml(external(link.url))}" target="_blank" rel="noopener noreferrer">Open link ↗</a></article>`,
+      )
+      .join("");
+    $("#skillsGrid").innerHTML = list(profile.skills)
+      .map(
+        (skill) =>
+          `<article class="skill-category"><h3>${escapeHtml(skill.category || "")}</h3><div>${list(
+            skill.tags,
+          )
+            .map((tag) => `<span class="skill-tag">${escapeHtml(tag)}</span>`)
+            .join("")}</div></article>`,
+      )
+      .join("");
+    // Certification cards remain editable placeholders until their final data is supplied.
+    $("#experienceTimeline").innerHTML = list(profile.experience)
+      .filter((item) => publicValue(item.title) || publicValue(item.company))
+      .map(
+        (item) =>
+          `<article class="experience-item"><h3>${escapeHtml(publicValue(item.title))}</h3><div class="meta">${escapeHtml(publicValue(item.company))}${publicValue(item.location) ? ` · ${escapeHtml(publicValue(item.location))}` : ""}${range(item) ? ` · ${escapeHtml(range(item))}` : ""}</div>${
+            list(item.responsibilities).filter((r) => publicValue(r)).length
+              ? `<ul>${list(item.responsibilities)
+                  .filter((r) => publicValue(r))
+                  .map((r) => `<li>${escapeHtml(publicValue(r))}</li>`)
+                  .join("")}</ul>`
+              : ""
+          }</article>`,
+      )
+      .join("");
+    $("#projectsGrid").innerHTML = list(profile.projects)
+      .filter((project) => publicValue(project.title))
+      .map(
+        (project) =>
+          `<article class="project-card">${project.featured ? '<span class="featured">FEATURED</span>' : ""}<div class="category">${escapeHtml(publicValue(project.category))}</div><h3>${escapeHtml(publicValue(project.title))}</h3><p>${escapeHtml(publicValue(project.description))}</p><div class="project-tech">${list(
+            project.technologies,
+          )
+            .filter((t) => publicValue(t))
+            .map((t) => escapeHtml(publicValue(t)))
+            .join(
+              " · ",
+            )}</div>${validUrl(project.url) ? `<div class="card-actions"><a href="${escapeHtml(external(project.url))}" target="_blank" rel="noopener noreferrer">View Project ↗</a></div>` : ""}</article>`,
+      )
+      .join("");
+    const contacts = [
+      ["Email", profile.email, profile.email && `mailto:${profile.email}`],
+      ["LinkedIn", profile.linkedin, profile.linkedin],
+      ["GitHub", profile.github, profile.github],
+      ["Location", profile.location, ""],
+      [
+        "Website",
+        profile.website,
+        profile.website && external(profile.website),
+      ],
+    ];
+    $("#contactDetails").innerHTML = contacts
+      .filter(
+        ([, value]) =>
+          validUrl(value) || (value && !clean(value).startsWith("ADD_")),
+      )
+      .map(
+        ([label, value, href]) =>
+          `<div class="contact-card"><strong>${label}</strong>${href ? `<a href="${escapeHtml(label === "Email" ? href : external(href))}" ${label !== "Email" ? 'target="_blank" rel="noopener noreferrer"' : ""}>${escapeHtml(value)}</a>` : `<span>${escapeHtml(value)}</span>`}</div>`,
+      )
+      .join("");
   };
-  const setupNavigation = () => { const toggle=$('#navigationToggle'), menu=$('#navigationLinks'), links=[...document.querySelectorAll('.navigation-links a[href^="#"]')], sections=links.map((link)=>$(link.getAttribute('href'))).filter(Boolean); const close=()=>{menu.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰';}; toggle.addEventListener('click',()=>{const open=menu.classList.toggle('menu-open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰';}); links.forEach((link)=>link.addEventListener('click',close)); document.addEventListener('keydown',(event)=>{if(event.key==='Escape')close();}); document.addEventListener('click',(event)=>{if(menu.classList.contains('menu-open')&&!menu.contains(event.target)&&!toggle.contains(event.target))close();}); const observer=new IntersectionObserver((entries)=>entries.forEach((entry)=>{if(entry.isIntersecting)links.forEach((link)=>link.classList.toggle('active',link.getAttribute('href')===`#${entry.target.id}`));}),{rootMargin:'-25% 0px -60% 0px'}); sections.forEach((section)=>observer.observe(section)); };
-  document.addEventListener('DOMContentLoaded',async()=>{setupNavigation();$('#currentYear').textContent=new Date().getFullYear();const brandLink=document.querySelector('.brand-name');brandLink?.addEventListener('click',(event)=>{if(brandLink.getAttribute('href')==='./'){event.preventDefault();window.scrollTo({top:0,behavior:'smooth'});history.replaceState(null,'',window.location.pathname);}});try{const response=await fetch('./profile-data.json',{cache:'no-cache'});if(!response.ok)throw new Error(`HTTP ${response.status}`);render(await response.json());}catch(error){console.error('Unable to load profile-data.json',error);render({name:'Denisa-Elena Stolniceanu'});}});
+  const setupNavigation = () => {
+    const toggle = $("#navigationToggle"),
+      menu = $("#navigationLinks"),
+      links = [...document.querySelectorAll('.navigation-links a[href^="#"]')],
+      sections = links
+        .map((link) => $(link.getAttribute("href")))
+        .filter(Boolean);
+    const close = () => {
+      menu.classList.remove("menu-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "☰";
+    };
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("menu-open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.textContent = open ? "×" : "☰";
+    });
+    links.forEach((link) => link.addEventListener("click", close));
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") close();
+    });
+    document.addEventListener("click", (event) => {
+      if (
+        menu.classList.contains("menu-open") &&
+        !menu.contains(event.target) &&
+        !toggle.contains(event.target)
+      )
+        close();
+    });
+    const observer = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            links.forEach((link) =>
+              link.classList.toggle(
+                "active",
+                link.getAttribute("href") === `#${entry.target.id}`,
+              ),
+            );
+            if (entry.target.id === "interests") {
+              entry.target
+                .querySelectorAll(".interest-card")
+                .forEach((card) => card.classList.add("is-visible"));
+            }
+            if (entry.target.id === "certifications") {
+              entry.target
+                .querySelectorAll(".certification-card")
+                .forEach((card) => card.classList.add("is-visible"));
+            }
+          }
+        }),
+      { rootMargin: "-25% 0px -60% 0px" },
+    );
+    sections.forEach((section) => observer.observe(section));
+  };
+  document.addEventListener("DOMContentLoaded", async () => {
+    initializeParticles();
+    setupNavigation();
+    document
+      .querySelectorAll('.certification-link[aria-disabled="true"]')
+      .forEach((link) => link.addEventListener("click", (event) => event.preventDefault()));
+    $("#currentYear").textContent = new Date().getFullYear();
+    const brandLink = document.querySelector(".brand-name");
+    brandLink?.addEventListener("click", (event) => {
+      if (brandLink.getAttribute("href") === "./") {
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        history.replaceState(null, "", window.location.pathname);
+      }
+    });
+    try {
+      const response = await fetch("./profile-data.json", {
+        cache: "no-cache",
+      });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      render(await response.json());
+    } catch (error) {
+      console.error("Unable to load profile-data.json", error);
+      render({ name: "Denisa-Elena Stolniceanu" });
+    }
+  });
 })();
