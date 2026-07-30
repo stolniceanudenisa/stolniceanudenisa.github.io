@@ -15,9 +15,10 @@
   "summary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
   "cvSummary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
   "about": [
-    "I am a Data Engineer with a strong passion for cybersecurity, data analysis, machine learning, computer vision, natural language processing, and Generative and Agentic AI.",
-    "I am actively expanding my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and security automation.",
-    "I enjoy continuous self-learning and independent exploration through practical projects, laboratories, courses, and cybersecurity research."
+    "I am a Cybersecurity Master’s student, actively expanding my knowledge in Defensive & Offensive Security, Cybersecurity Engineering, and Vulnerability Management.",
+    "As a Data Engineer, I have a strong interest in Data Analysis, Machine Learning, Natural Language Processing, and Generative & Agentic AI.",
+    "I am also particularly interested in exploring the intersection between Cybersecurity and AI, including areas such as Agentic SOC and Agentic Red Teaming.",
+    "I enjoy continuous self-learning and independent exploration, always seeking new ways to innovate, strengthen my skills, and grow through hands-on practice."
   ],
   "focusAreas": [
     { "title": "Cybersecurity Engineering", "description": "Defensive and offensive security, vulnerability management, security engineering, cloud security, and automation." },

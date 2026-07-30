@@ -136,31 +136,46 @@
     window.requestAnimationFrame(animate);
   }
   function initializeCertificationLightbox() {
-    const lightbox = document.getElementById("certificationLightbox");
-    const lightboxImage = document.getElementById("certificationLightboxImage");
-    const imageLinks = [...document.querySelectorAll("[data-cert-image]")];
-    if (!lightbox || !lightboxImage || !imageLinks.length) return;
+    const modal = document.getElementById("certificateModal");
+    const modalImage = document.getElementById("certificateModalImage");
+    const modalTitle = document.getElementById("certificateModalTitle");
+    const cards = [...document.querySelectorAll(".certificate-card")];
+    if (!modal || !modalImage || !modalTitle || !cards.length) return;
     const close = () => {
-      lightbox.hidden = true;
-      lightboxImage.removeAttribute("src");
+      modal.hidden = true;
+      modalImage.removeAttribute("src");
+      modalTitle.textContent = "";
       document.body.style.removeProperty("overflow");
     };
-    imageLinks.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const image = link.querySelector("img");
-        lightboxImage.src = link.dataset.certImage;
-        lightboxImage.alt = image?.alt || "Expanded certificate image";
-        lightbox.hidden = false;
-        document.body.style.overflow = "hidden";
+    const open = (card) => {
+      const source = card.dataset.certificateSrc;
+      if (!source) return;
+      const image = card.querySelector(".certificate-image");
+      const title = card.querySelector("h3");
+      modalImage.src = source;
+      modalImage.alt = image?.alt || title?.textContent || "Expanded certificate image";
+      modalTitle.textContent = title?.textContent || "Certificate";
+      modal.hidden = false;
+      document.body.style.overflow = "hidden";
+    };
+    cards.forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest(".certificate-action")) return;
+        open(card);
+      });
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          open(card);
+        }
       });
     });
-    lightbox.addEventListener("click", (event) => {
-      if (event.target === lightbox || event.target === lightboxImage) close();
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) close();
     });
-    lightbox.querySelector(".certification-lightbox-close")?.addEventListener("click", close);
+    modal.querySelector(".certificate-modal-close")?.addEventListener("click", close);
     document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && !lightbox.hidden) close();
+      if (event.key === "Escape" && !modal.hidden) close();
     });
   }
   const render = (profile) => {
@@ -300,7 +315,7 @@
             }
             if (entry.target.id === "certifications") {
               entry.target
-                .querySelectorAll(".certification-card")
+                .querySelectorAll(".certificate-card")
                 .forEach((card) => card.classList.add("is-visible"));
             }
             if (entry.target.id === "projects") {
