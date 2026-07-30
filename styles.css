@@ -1276,8 +1276,9 @@ footer {
   --border-color: #27272a;
 }
 #contact {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 #contact .section-header {
   display: flex;
@@ -1286,14 +1287,17 @@ footer {
   margin-bottom: 3rem;
 }
 #contact .section-header h2 {
+  margin: 0;
   font-family: "Space Grotesk", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: var(--text-primary);
+  line-height: 1.2;
 }
 #contact .section-header::before {
   content: "#";
   color: var(--accent-green);
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.5rem;
 }
 #contact .section-header::after {
@@ -1306,25 +1310,32 @@ footer {
   width: 100%;
 }
 .contact-text p {
+  max-width: none;
+  margin: 0 0 2rem;
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 .contact-links {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
 }
 .contact-link {
   display: flex;
   align-items: center;
   gap: 1rem;
-  width: fit-content;
+  width: auto;
+  max-width: 100%;
   color: var(--text-secondary);
   text-decoration: none;
   padding: 1rem;
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 8px;
+  font-family: "JetBrains Mono", monospace;
   transition: all 0.3s ease;
 }
 .contact-link:hover {
@@ -1354,9 +1365,16 @@ footer p {
   margin: 0;
   color: var(--text-dim);
 }
-footer span {
-  float: right;
-  color: #536062;
+@media (max-width: 768px) {
+  #contact {
+    padding: 4rem 1.5rem;
+  }
+  .contact-link {
+    width: 100%;
+  }
+  footer {
+    padding: 2rem 1.5rem;
+  }
 }
 .certifications-grid {
   display: grid;
