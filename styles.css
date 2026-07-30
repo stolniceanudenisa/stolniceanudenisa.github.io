@@ -1,5 +1,8 @@
 ﻿:root {
-  --header-height: 76px;
+  --nav-height: 72px;
+  --header-height: var(--nav-height);
+  --container-width: 1200px;
+  --container-padding-x: 24px;
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono: "Fira Code", monospace;
   --bg-secondary: var(--panel);
@@ -62,7 +65,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #111827;
+  background: #0b1120;
   border-bottom: 1px solid rgba(0, 255, 157, 0.16);
 }
 main {
@@ -78,13 +81,15 @@ main > section:not(#hero) {
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0;
 }
 .navigation-wrapper {
   width: 100%;
-  max-width: 1400px;
+  max-width: var(--container-width);
   height: 100%;
   margin: 0 auto;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -92,7 +97,6 @@ main > section:not(#hero) {
 .brand-name {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   margin: 0;
   padding: 0;
   color: var(--cyan);
@@ -103,11 +107,6 @@ main > section:not(#hero) {
   text-decoration: none;
   text-transform: none;
   letter-spacing: normal;
-}
-.brand-icon {
-  color: var(--cyan);
-  font-size: 1.2rem;
-  line-height: 1;
 }
 .navigation-links {
   display: flex;
@@ -165,21 +164,23 @@ section > .container {
   overflow: hidden;
   background: #0b1120;
   min-height: 100vh;
-  padding: var(--header-height) 0 0;
-  display: block;
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: 6rem;
+  display: flex;
+  align-items: center;
 }
 .hero-container {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: var(--container-padding-x);
+  padding-right: var(--container-padding-x);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
-  gap: 5rem;
+  gap: 4rem;
 }
 #particles-js {
   position: absolute;
@@ -193,7 +194,7 @@ section > .container {
 }
 .hero-copy {
   width: 100%;
-  max-width: 720px;
+  max-width: 700px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -213,7 +214,7 @@ section > .container {
 }
 .terminal-card {
   width: 100%;
-  max-width: 680px;
+  max-width: 520px;
   margin: 0;
   justify-self: end;
   text-align: left;
@@ -246,8 +247,10 @@ section > .container {
 }
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   margin-top: 30px;
+  margin-bottom: 0;
   justify-content: flex-start;
   align-items: center;
 }
@@ -354,6 +357,12 @@ section > .container {
   padding-top: 100px;
   padding-bottom: 100px;
 }
+#about {
+  width: 100%;
+  background-color: #111827;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
 section[id] {
   scroll-margin-top: calc(var(--header-height) + 20px);
 }
@@ -398,6 +407,24 @@ section {
   border-radius: 999px;
   background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
 }
+#about .section-heading {
+  width: 100%;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+#about .section-heading h2 {
+  color: #f1f5f9;
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  text-align: center;
+}
+#about .section-heading h2::after {
+  left: 50%;
+  bottom: -1rem;
+  width: 75px;
+  height: 5px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #6ee7b7, #7dd3fc);
+}
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -405,7 +432,8 @@ section {
 }
 .about-content {
   width: 100%;
-  max-width: none;
+  max-width: 1200px;
+  margin: 0 auto;
   grid-column: 1 / -1;
 }
 .about-content p {
@@ -1017,9 +1045,9 @@ footer span {
   font-size: 0.85rem;
   line-height: 1.7;
 }
-@media (max-width: 1000px) {
+@media (max-width: 992px) {
   .navigation {
-    padding: 0 1.25rem;
+    padding: 0;
   }
   .navigation-toggle {
     display: block;
@@ -1029,9 +1057,9 @@ footer span {
     position: absolute;
     left: 0;
     right: 0;
-    top: var(--header-height);
+    top: var(--nav-height);
     padding: 20px 28px;
-    background: #111827;
+    background: #0b1120;
     flex-direction: column;
     align-items: flex-start;
     border-bottom: 1px solid rgba(0, 255, 157, 0.2);
@@ -1045,12 +1073,12 @@ footer span {
   }
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
   .hero-copy {
-    max-width: 800px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: center;
     align-items: center;
@@ -1064,7 +1092,7 @@ footer span {
     justify-content: center;
   }
   .terminal-card {
-    max-width: 850px;
+    max-width: 760px;
     margin: 0 auto;
     justify-self: center;
     text-align: left;
@@ -1179,6 +1207,22 @@ footer span {
   .hero-container {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+}
+@media (max-width: 576px) {
+  .hero-section {
+    padding-top: calc(64px + 3rem);
+    padding-bottom: 5rem;
+  }
+  #about {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  .hero-container,
+  #about > .container,
+  #about > .section-container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
