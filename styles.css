@@ -878,14 +878,14 @@ h1.hero-name {
   white-space: pre-wrap;
 }
 .portfolio-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 #about {
   width: 100%;
   background-color: #111827;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 48px;
+  padding-bottom: 48px;
 }
 section[id] {
   scroll-margin-top: calc(var(--header-height) + 20px);
@@ -1277,7 +1277,7 @@ footer {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5rem 2rem;
+  padding: 48px 2rem;
 }
 #contact .section-header {
   display: flex;
@@ -1313,7 +1313,7 @@ footer {
   max-width: none;
   margin: 0 0 2rem;
   color: var(--text-secondary);
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -1367,7 +1367,7 @@ footer p {
 }
 @media (max-width: 768px) {
   #contact {
-    padding: 4rem 1.5rem;
+    padding: 40px 1.5rem;
   }
   .contact-link {
     width: 100%;
@@ -1862,8 +1862,8 @@ footer p {
 }
 @media (max-width: 768px) {
   section:not(.hero-section) {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
   .section-container,
   section > .container,
