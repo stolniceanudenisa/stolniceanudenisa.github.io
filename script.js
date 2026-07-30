@@ -95,6 +95,46 @@
       retina_detect: true,
     });
   }
+  function initializeRadarDetection() {
+    const radar = document.querySelector(".cyber-radar");
+    const blips = [...document.querySelectorAll(".radar-blip")];
+    if (!radar || !blips.length) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const duration = 5000;
+    blips.forEach((blip) => {
+      const x = parseFloat(blip.style.left) / 100 - 0.5;
+      const y = parseFloat(blip.style.top) / 100 - 0.5;
+      const angle = (Math.atan2(-y, -x) * 180) / Math.PI;
+      blip.dataset.angle = String((angle + 360) % 360);
+    });
+    if (reducedMotion) return;
+    const start = performance.now();
+    let previousAngle = 0;
+    const reveal = (blip) => {
+      if (blip.dataset.timer) window.clearTimeout(Number(blip.dataset.timer));
+      blip.classList.add("is-detected");
+      blip.dataset.timer = String(
+        window.setTimeout(() => {
+          blip.classList.remove("is-detected");
+          delete blip.dataset.timer;
+        }, 1900),
+      );
+    };
+    const animate = (now) => {
+      const currentAngle = (((now - start) % duration) / duration) * 360;
+      const wrapped = currentAngle < previousAngle;
+      blips.forEach((blip) => {
+        const targetAngle = Number(blip.dataset.angle);
+        const passed = wrapped
+          ? targetAngle >= previousAngle || targetAngle <= currentAngle
+          : targetAngle >= previousAngle && targetAngle <= currentAngle;
+        if (passed) reveal(blip);
+      });
+      previousAngle = currentAngle;
+      window.requestAnimationFrame(animate);
+    };
+    window.requestAnimationFrame(animate);
+  }
   const render = (profile) => {
     window._profileData = profile;
     $("#profileName").textContent = profile.name || "Your Name";
@@ -252,6 +292,7 @@
   };
   document.addEventListener("DOMContentLoaded", async () => {
     initializeParticles();
+    initializeRadarDetection();
     setupNavigation();
     document
       .querySelectorAll('.certification-link[aria-disabled="true"]')

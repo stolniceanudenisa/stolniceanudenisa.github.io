@@ -722,6 +722,116 @@ section > .container {
 .terminal-card.radar-host:hover {
   border-color: #2563eb;
 }
+.terminal-card.radar-host {
+  height: auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+.terminal-card.radar-host:hover {
+  border: none;
+  box-shadow: none;
+}
+.radar-wrapper {
+  background: transparent;
+  border: none;
+  outline: none;
+  overflow: visible;
+}
+.cyber-radar {
+  width: min(100%, 460px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  transform: none;
+  background: radial-gradient(
+    circle,
+    rgba(23, 37, 84, 0.75) 0%,
+    rgba(15, 23, 42, 0.8) 60%,
+    rgba(11, 17, 32, 0.25) 100%
+  );
+  border: 1px solid rgba(96, 165, 250, 0.55);
+  box-shadow:
+    0 0 25px rgba(37, 99, 235, 0.15),
+    inset 0 0 30px rgba(37, 99, 235, 0.08);
+}
+.radar-sweep {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(0deg);
+  transform-origin: 50% 50%;
+  transform-box: border-box;
+  background: conic-gradient(
+    from 270deg,
+    #7dd3fc 0deg 2deg,
+    rgba(59, 130, 246, 0.55) 2deg 15deg,
+    transparent 15deg 360deg
+  );
+  opacity: 0.78;
+  animation: radarSweep 5s linear infinite;
+}
+.radar-sweep::after {
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 2px;
+  transform: translateY(-50%) rotate(180deg);
+  transform-origin: 0 50%;
+  background: #7dd3fc;
+  box-shadow: 0 0 8px #7dd3fc, 0 0 18px #3b82f6;
+}
+.radar-blip {
+  position: absolute;
+  z-index: 3;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #7dd3fc;
+  box-shadow:
+    0 0 6px #7dd3fc,
+    0 0 14px rgba(59, 130, 246, 0.8);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.4);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+}
+.radar-blip::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(125, 211, 252, 0.55);
+  border-radius: 50%;
+  opacity: 0;
+}
+.radar-blip.is-detected {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+.radar-blip.is-detected::after {
+  animation: blipPulse 1s ease-out;
+}
+@keyframes blipPulse {
+  from {
+    opacity: 0.8;
+    transform: scale(0.4);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.7);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .radar-sweep {
+    animation: none;
+  }
+  .radar-blip,
+  .radar-blip.is-detected::after {
+    transition: none;
+    animation: none;
+  }
+}
 .terminal-bar {
   display: flex;
   align-items: center;
@@ -1630,7 +1740,6 @@ footer span {
     padding-right: 20px;
   }
 }
-
 
 
 
