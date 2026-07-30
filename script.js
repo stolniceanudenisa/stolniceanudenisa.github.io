@@ -135,6 +135,34 @@
     };
     window.requestAnimationFrame(animate);
   }
+  function initializeCertificationLightbox() {
+    const lightbox = document.getElementById("certificationLightbox");
+    const lightboxImage = document.getElementById("certificationLightboxImage");
+    const imageLinks = [...document.querySelectorAll("[data-cert-image]")];
+    if (!lightbox || !lightboxImage || !imageLinks.length) return;
+    const close = () => {
+      lightbox.hidden = true;
+      lightboxImage.removeAttribute("src");
+      document.body.style.removeProperty("overflow");
+    };
+    imageLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const image = link.querySelector("img");
+        lightboxImage.src = link.dataset.certImage;
+        lightboxImage.alt = image?.alt || "Expanded certificate image";
+        lightbox.hidden = false;
+        document.body.style.overflow = "hidden";
+      });
+    });
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox || event.target === lightboxImage) close();
+    });
+    lightbox.querySelector(".certification-lightbox-close")?.addEventListener("click", close);
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !lightbox.hidden) close();
+    });
+  }
   const render = (profile) => {
     window._profileData = profile;
     $("#profileName").textContent = profile.name || "Your Name";
@@ -294,6 +322,7 @@
   document.addEventListener("DOMContentLoaded", async () => {
     initializeParticles();
     initializeRadarDetection();
+    initializeCertificationLightbox();
     setupNavigation();
     document
       .querySelectorAll('.certification-link[aria-disabled="true"]')

@@ -1424,13 +1424,59 @@ footer p {
   font-size: 0.8rem;
   text-align: center;
 }
-.certification-image {
+.certification-card .certification-image {
   width: 100%;
   height: 210px;
   object-fit: contain;
   padding: 1rem;
   background: var(--bg-tertiary);
   border-bottom: 1px solid var(--border-color);
+}
+.certification-image-link {
+  display: block;
+  cursor: zoom-in;
+}
+.certification-image-link:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: -2px;
+}
+.certification-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(10, 10, 15, 0.9);
+  cursor: zoom-out;
+}
+.certification-lightbox[hidden] {
+  display: none;
+}
+.certification-lightbox img {
+  display: block;
+  max-width: min(96vw, 1400px);
+  max-height: 92vh;
+  object-fit: contain;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent-cyan);
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.2);
+  cursor: default;
+}
+.certification-lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  border: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
 }
 .certification-content {
   display: flex;
