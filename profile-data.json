@@ -15,16 +15,12 @@
   "summary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
   "cvSummary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
   "about": [
-    "I am a Cybersecurity Master’s student, actively expanding my knowledge in Defensive & Offensive Security, Cybersecurity Engineering, and Vulnerability Management.",
+    "I am a Cybersecurity Master’s student, actively expanding my knowledge in Defensive & Offensive Security, Cybersecurity Engineering, Cloud Security, and Vulnerability Management.",
     "As a Data Engineer, I have a strong interest in Data Analysis, Machine Learning, Natural Language Processing, and Generative & Agentic AI.",
     "I am also particularly interested in exploring the intersection between Cybersecurity and AI, including areas such as Agentic SOC and Agentic Red Teaming.",
     "I enjoy continuous self-learning and independent exploration, always seeking new ways to innovate, strengthen my skills, and grow through hands-on practice."
   ],
-  "focusAreas": [
-    { "title": "Cybersecurity Engineering", "description": "Defensive and offensive security, vulnerability management, security engineering, cloud security, and automation." },
-    { "title": "Data Engineering", "description": "Data pipelines, processing, analytics, automation, and scalable data solutions." },
-    { "title": "Artificial Intelligence", "description": "Machine learning, Generative AI, Agentic AI, and AI for cybersecurity." }
-  ],
+ 
   "links": [
     { "title": "GitHub", "description": "Projects, laboratories, and code repositories", "url": "ADD_YOUR_GITHUB_URL", "icon": "⌘" },
     { "title": "LinkedIn", "description": "Professional profile and career updates", "url": "ADD_YOUR_LINKEDIN_URL", "icon": "in" },
@@ -58,7 +54,6 @@
     { "degree": "EIT Digital Master School – Cybersecurity", "school": "University of Twente", "location": "Netherlands", "startYear": "ADD_START_YEAR", "endYear": "ADD_END_YEAR", "status": "Current" },
     { "degree": "ADD_PREVIOUS_DEGREE", "school": "ADD_UNIVERSITY", "location": "ADD_LOCATION", "startYear": "ADD_START_YEAR", "endYear": "ADD_END_YEAR", "status": "Completed" }
   ],
-  "languages": [{ "name": "Romanian", "level": "Native" }, { "name": "English", "level": "Professional proficiency" }],
   "projects": [
     { "title": "VDR Document Anonymisation and Redaction", "category": "Cybersecurity Engineering", "description": "A document anonymisation and redaction application for identifying and masking sensitive information while preserving document structure.", "technologies": ["Python", "Streamlit", "Microsoft Presidio", "PII Detection"], "url": "ADD_PROJECT_URL", "featured": true },
     { "title": "Agentic SOC Research", "category": "AI for Cybersecurity", "description": "Research into agentic AI architectures for SOC automation, alert investigation, response planning, and secure autonomous agents.", "technologies": ["Agentic AI", "SOC Automation", "SIEM", "Cybersecurity Research"], "url": "ADD_PROJECT_OR_DOCUMENT_URL", "featured": true }
