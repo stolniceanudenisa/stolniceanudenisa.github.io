@@ -239,6 +239,277 @@ section > .container {
   min-width: 0;
   animation: heroTerminalEnter 0.9s ease-out 0.15s both;
 }
+.terminal-card.radar-host {
+  height: 280px;
+  overflow: hidden;
+  background: #0b1120;
+  border-color: #172554;
+}
+.radar-wrapper {
+  width: 100%;
+  max-width: inherit;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.cyber-radar {
+  position: relative;
+  width: min(100%, 460px);
+  aspect-ratio: 1 / 1;
+  max-height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 1;
+  background: radial-gradient(circle, #172554 0%, #0f172a 58%, #0b1120 100%);
+  border: 1px solid #1e3a8a;
+  box-shadow: 0 0 30px #0f172a;
+}
+.radar-grid,
+.radar-ring,
+.radar-sweep,
+.radar-connection,
+.radar-ripple,
+.radar-marker,
+.radar-center {
+  position: absolute;
+}
+.radar-grid {
+  background: #1e3a8a;
+  opacity: 0.42;
+}
+.radar-grid-horizontal,
+.radar-grid-vertical {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+.radar-grid-vertical {
+  transform: rotate(90deg);
+}
+.radar-grid-diagonal {
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+.radar-grid-diagonal-a {
+  transform: rotate(45deg);
+}
+.radar-grid-diagonal-b {
+  transform: rotate(-45deg);
+}
+.radar-ring {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #2563eb;
+  border-radius: 50%;
+  opacity: 0.58;
+}
+.radar-ring-outer {
+  width: 92%;
+  height: 92%;
+}
+.radar-ring-middle {
+  width: 64%;
+  height: 64%;
+}
+.radar-ring-inner {
+  width: 34%;
+  height: 34%;
+}
+.radar-sweep {
+  left: 50%;
+  top: 50%;
+  width: 50%;
+  height: 50%;
+  transform-origin: 0 0;
+  background: conic-gradient(from -10deg, transparent 0 78%, #3b82f6 84%, transparent 91% 100%);
+  opacity: 0.55;
+  animation: radarSweep 4.5s linear infinite;
+}
+.radar-connection {
+  left: 50%;
+  top: 50%;
+  width: 31%;
+  height: 1px;
+  transform-origin: 0 50%;
+  background: #3b82f6;
+  opacity: 0.62;
+}
+.radar-connection-1 { transform: rotate(-145deg); }
+.radar-connection-2 { transform: rotate(-55deg); }
+.radar-connection-3 { transform: rotate(0deg); }
+.radar-connection-4 { transform: rotate(50deg); }
+.radar-connection-5 { transform: rotate(140deg); }
+.radar-connection-6 { transform: rotate(185deg); }
+.radar-ripple {
+  left: 50%;
+  top: 50%;
+  width: 8%;
+  height: 8%;
+  border: 1px solid #60a5fa;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: radarRipple 3.2s ease-out infinite;
+}
+.radar-ripple-2 {
+  animation-delay: 1.6s;
+}
+.radar-marker {
+  z-index: 2;
+  color: #7dd3fc;
+  filter: drop-shadow(0 0 7px #2563eb);
+}
+.radar-nodes {
+  left: 18%;
+  top: 21%;
+  width: 14%;
+  height: 12%;
+}
+.radar-nodes::before,
+.radar-nodes::after {
+  content: "";
+  position: absolute;
+  background: #60a5fa;
+  transform-origin: left center;
+}
+.radar-nodes::before {
+  left: 16%;
+  top: 55%;
+  width: 70%;
+  height: 1px;
+  transform: rotate(-24deg);
+}
+.radar-nodes::after {
+  left: 16%;
+  top: 55%;
+  width: 70%;
+  height: 1px;
+  transform: rotate(28deg);
+}
+.radar-nodes i {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border: 1px solid #bfdbfe;
+  border-radius: 50%;
+  background: #2563eb;
+}
+.radar-nodes i:nth-child(1) { left: 0; top: 42%; }
+.radar-nodes i:nth-child(2) { right: 0; top: 0; }
+.radar-nodes i:nth-child(3) { right: 0; bottom: 0; }
+.radar-hexagon {
+  left: 69%;
+  top: 17%;
+  width: 12%;
+  aspect-ratio: 1;
+  background: #60a5fa;
+  clip-path: polygon(25% 3%, 75% 3%, 100% 50%, 75% 97%, 25% 97%, 0 50%);
+}
+.radar-hexagon::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #0f172a;
+  clip-path: inherit;
+}
+.radar-rings {
+  left: 78%;
+  top: 44%;
+  width: 12%;
+  aspect-ratio: 1;
+  border: 1px solid #7dd3fc;
+  border-radius: 50%;
+  animation: radarRotate 7s linear infinite;
+}
+.radar-rings i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60%;
+  height: 60%;
+  border: 1px solid #3b82f6;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.radar-rings i:nth-child(2) {
+  width: 25%;
+  height: 25%;
+  background: #60a5fa;
+}
+.radar-diamond {
+  left: 64%;
+  top: 72%;
+  width: 10%;
+  aspect-ratio: 1;
+  border: 2px solid #7dd3fc;
+  transform: rotate(45deg);
+}
+.radar-waveform {
+  left: 18%;
+  top: 70%;
+  width: 16%;
+  height: 12%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.radar-waveform i {
+  width: 3px;
+  height: 35%;
+  background: #60a5fa;
+  animation: radarWave 1.1s ease-in-out infinite alternate;
+}
+.radar-waveform i:nth-child(2) { animation-delay: 0.12s; height: 70%; }
+.radar-waveform i:nth-child(3) { animation-delay: 0.24s; height: 100%; }
+.radar-waveform i:nth-child(4) { animation-delay: 0.36s; height: 58%; }
+.radar-waveform i:nth-child(5) { animation-delay: 0.48s; height: 82%; }
+.radar-arc {
+  left: 8%;
+  top: 43%;
+  width: 15%;
+  aspect-ratio: 1;
+  border: 3px dashed #3b82f6;
+  border-radius: 50%;
+  animation: radarRotateReverse 8s linear infinite;
+}
+.radar-center {
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #bfdbfe;
+  border-radius: 50%;
+  background: #60a5fa;
+  box-shadow: 0 0 12px #7dd3fc;
+  transform: translate(-50%, -50%);
+  animation: radarPulse 1.8s ease-in-out infinite;
+}
+@keyframes radarSweep {
+  to { transform: rotate(360deg); }
+}
+@keyframes radarRipple {
+  0% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.5); }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(5); }
+}
+@keyframes radarPulse {
+  50% { box-shadow: 0 0 22px #7dd3fc; transform: translate(-50%, -50%) scale(1.25); }
+}
+@keyframes radarRotate {
+  to { transform: rotate(360deg); }
+}
+@keyframes radarRotateReverse {
+  to { transform: rotate(-360deg); }
+}
+@keyframes radarWave {
+  to { transform: scaleY(0.35); opacity: 0.5; }
+}
 .hero-copy h1 {
   font-family: var(--font-sans);
 }
@@ -345,6 +616,9 @@ section > .container {
 .project-card:hover,
 .contact-card:hover {
   border-color: var(--green);
+}
+.terminal-card.radar-host:hover {
+  border-color: #2563eb;
 }
 .terminal-bar {
   display: flex;

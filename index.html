@@ -15,7 +15,40 @@
   <main>
     <section id="hero" class="hero-section"><div id="particles-js" aria-hidden="true"></div><div class="hero-container"><div class="hero-copy"><h1>Hi, I'm <span id="profileName">Denisa Stolniceanu</span></h1><p class="hero-role" id="profileRole"></p><p class="hero-description" id="profileDescription"></p><!--
       <div class="hero-actions"><a class="button primary" href="#about">Explore portfolio</a><a class="button" href="cv/">Open CV ↗</a></div>
-      --></div><div class="terminal-card"><div class="terminal-bar"><i></i><i></i><i></i><span>denisa@portfolio:~$</span></div><pre id="terminalOutput">loading_profile();</pre></div></div></section>
+      --></div><div class="terminal-card radar-host">
+        <!--
+        <div class="terminal-bar"><i></i><i></i><i></i><span>denisa@portfolio:~$</span></div>
+        <pre id="terminalOutput">loading_profile();</pre>
+        -->
+        <span id="terminalOutput" hidden aria-hidden="true"></span>
+        <div class="radar-wrapper" role="img" aria-label="Abstract blue cybersecurity radar visual">
+          <div class="cyber-radar" aria-hidden="true">
+            <div class="radar-grid radar-grid-horizontal"></div>
+            <div class="radar-grid radar-grid-vertical"></div>
+            <div class="radar-grid radar-grid-diagonal radar-grid-diagonal-a"></div>
+            <div class="radar-grid radar-grid-diagonal radar-grid-diagonal-b"></div>
+            <div class="radar-ring radar-ring-outer"></div>
+            <div class="radar-ring radar-ring-middle"></div>
+            <div class="radar-ring radar-ring-inner"></div>
+            <div class="radar-sweep"></div>
+            <div class="radar-connection radar-connection-1"></div>
+            <div class="radar-connection radar-connection-2"></div>
+            <div class="radar-connection radar-connection-3"></div>
+            <div class="radar-connection radar-connection-4"></div>
+            <div class="radar-connection radar-connection-5"></div>
+            <div class="radar-connection radar-connection-6"></div>
+            <div class="radar-ripple radar-ripple-1"></div>
+            <div class="radar-ripple radar-ripple-2"></div>
+            <div class="radar-marker radar-nodes" aria-label="Connected nodes"><i></i><i></i><i></i></div>
+            <div class="radar-marker radar-hexagon" aria-label="Outlined hexagon"></div>
+            <div class="radar-marker radar-rings" aria-label="Concentric rotating rings"><i></i><i></i></div>
+            <div class="radar-marker radar-diamond" aria-label="Outlined diamond"></div>
+            <div class="radar-marker radar-waveform" aria-label="Animated waveform bars"><i></i><i></i><i></i><i></i><i></i></div>
+            <div class="radar-marker radar-arc" aria-label="Segmented circular arc"></div>
+            <div class="radar-center"></div>
+          </div>
+        </div>
+      </div></div></section>
     <section id="about" class="portfolio-section"><div class="section-heading"><h2>About Me</h2></div><div class="about-layout"><div id="aboutContent" class="about-content"></div><div><h3>Current focus</h3><div id="focusCards" class="focus-cards"></div><div class="preview-row"><div><h3>Education</h3><div id="educationPreview"></div></div><div><h3>Languages</h3><div id="languagesPreview"></div></div></div></div></div></section>
     <section id="interests" class="portfolio-section"><div class="section-heading"><h2>Interests</h2></div><div class="interests-grid">
       <article class="interest-card"><h3>Defensive Security</h3><p>Detection engineering, incident response, threat hunting, security monitoring and defensive operations.</p></article>
