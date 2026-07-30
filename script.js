@@ -214,7 +214,8 @@
         profile.website && external(profile.website),
       ],
     ];
-    $("#contactDetails").innerHTML = contacts
+    const contactDetails = $("#contactDetails");
+    if (contactDetails) contactDetails.innerHTML = contacts
       .filter(
         ([, value]) =>
           validUrl(value) || (value && !clean(value).startsWith("ADD_")),
@@ -300,7 +301,8 @@
     document
       .querySelectorAll('.project-link[aria-disabled="true"]')
       .forEach((link) => link.addEventListener("click", (event) => event.preventDefault()));
-    $("#currentYear").textContent = new Date().getFullYear();
+    const currentYear = $("#currentYear");
+    if (currentYear) currentYear.textContent = new Date().getFullYear();
     const brandLink = document.querySelector(".brand-name");
     brandLink?.addEventListener("click", (event) => {
       if (brandLink.getAttribute("href") === "./") {
