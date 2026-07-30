@@ -27,9 +27,11 @@ html {
 }
 html,
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
   min-height: 100%;
+  background-color: #111827;
 }
 *::before,
 *::after {
@@ -60,7 +62,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--bg);
+  background: #111827;
   border-bottom: 1px solid rgba(0, 255, 157, 0.16);
 }
 main {
@@ -143,11 +145,6 @@ main > section:not(#hero) {
   font-size: 1.5rem;
   cursor: pointer;
 }
-.hero-section {
-  max-width: 1120px;
-  margin: auto;
-  padding: 0 28px;
-}
 .portfolio-section,
 .section-container,
 section > .container {
@@ -159,13 +156,25 @@ section > .container {
   padding-right: 2rem;
 }
 .hero-section {
+  width: 100%;
+  max-width: none;
+  margin: 0;
   position: relative;
   overflow: hidden;
-  background: #0b1120;
+  background: #111827;
   min-height: calc(100vh - 80px);
   min-height: calc(100svh - 80px);
-  padding: var(--header-height) 2rem 0;
+  padding: var(--header-height) 0 0;
+  display: block;
+}
+.hero-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(480px, 0.9fr);
   align-items: center;
@@ -176,14 +185,10 @@ section > .container {
   inset: 0;
   z-index: 0;
   width: 100%;
-  height: auto;
-  background: #0b1120;
+  height: 100%;
+  background: #111827;
   opacity: 0.32;
   pointer-events: none;
-}
-.hero-section > :not(#particles-js) {
-  position: relative;
-  z-index: 1;
 }
 .hero-copy {
   width: 100%;
@@ -1014,7 +1019,7 @@ footer span {
     right: 0;
     top: var(--header-height);
     padding: 20px 28px;
-    background: #101018;
+    background: #111827;
     flex-direction: column;
     align-items: flex-start;
     border-bottom: 1px solid rgba(0, 255, 157, 0.2);
@@ -1023,10 +1028,14 @@ footer span {
     display: flex;
   }
   .hero-section {
+    min-height: auto;
+    padding: calc(var(--header-height) + 4rem) 0 4rem;
+  }
+  .hero-container {
     grid-template-columns: 1fr;
     gap: 3rem;
-    min-height: auto;
-    padding: calc(var(--header-height) + 4rem) 1.25rem 4rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .hero-copy {
     max-width: 800px;
@@ -1063,8 +1072,11 @@ footer span {
   }
 }
 @media (max-width: 520px) {
-  .hero-section,
   .portfolio-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .hero-container {
     padding-left: 20px;
     padding-right: 20px;
   }
