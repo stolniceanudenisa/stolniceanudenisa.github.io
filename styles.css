@@ -1308,7 +1308,7 @@ footer {
   margin: 0 auto;
   padding: 1.5rem;
   text-align: center;
-  background: #121f36;
+  background: transparent;
   border: 1px solid rgba(125, 211, 252, 0.2);
   border-radius: 8px;
 }
@@ -1319,6 +1319,12 @@ footer {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
+}
+.certificate-status {
+  margin: 0.75rem 0 0;
+  color: var(--accent-green);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 .contact-links {
   display: flex;
