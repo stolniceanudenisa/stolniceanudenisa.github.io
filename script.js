@@ -245,7 +245,10 @@
           }</article>`,
       )
       .join("");
-    // Project cards remain editable placeholders until their final data is supplied.
+    $("#projectsGrid").innerHTML = list(profile.projects)
+      .filter((item) => publicValue(item.title))
+      .map((item) => `<article class="project-card"><div class="project-content"><h3 class="project-title">${escapeHtml(publicValue(item.title))}</h3>${publicValue(item.category) ? `<p class="category">${escapeHtml(publicValue(item.category))}</p>` : ""}<p class="project-description">${escapeHtml(publicValue(item.description))}</p><div class="project-tags">${list(item.technologies).map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`).join("")}</div></div></article>`)
+      .join("");
     const contacts = [
       ["Email", profile.email, profile.email && `mailto:${profile.email}`],
       ["LinkedIn", profile.linkedin, profile.linkedin],

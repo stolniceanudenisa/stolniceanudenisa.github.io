@@ -5,57 +5,37 @@
   "heroRoleSecondary": "Data Engineer",
   "heroDescription": "Data Engineer expanding my knowledge in cybersecurity engineering, defensive and offensive security, vulnerability management, cloud security, and the intersection between cybersecurity and artificial intelligence.",
   "location": "Romania",
-  "locationShort": "Romania",
-  "email": "stolniceanudenisa@gmail.com",
+  "email": "stolniceanudenisa@yahoo.com",
   "website": "stolniceanudenisa.github.io",
   "linkedin": "https://www.linkedin.com/in/denisa-elena-stolniceanu/",
-  "linkedinShort": "https://www.linkedin.com/in/denisa-elena-stolniceanu/",
   "github": "https://github.com/stolniceanudenisa",
-  "githubShort": "https://github.com/stolniceanudenisa",
-  "summary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
-  "cvSummary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology. I am actively developing my knowledge in defensive and offensive security, cybersecurity engineering, vulnerability management, cloud security, and AI-driven security solutions.",
+  "summary": "I am a Data Engineer with a strong interest in cybersecurity, artificial intelligence, and secure technology.",
   "about": [
-    "I am a Cybersecurity Master’s student, actively expanding my knowledge in Defensive & Offensive Security, Cybersecurity Engineering, Cloud Security, and Vulnerability Management.",
+    "I am a Cybersecurity Master's student, actively expanding my knowledge in Defensive & Offensive Security, Cybersecurity Engineering, Cloud Security, and Vulnerability Management.",
     "As a Data Engineer, I have a strong interest in Data Analysis, Machine Learning, Natural Language Processing, and Generative & Agentic AI.",
     "I am also particularly interested in exploring the intersection between Cybersecurity and AI, including areas such as Agentic SOC and Agentic Red Teaming.",
     "I enjoy continuous self-learning and independent exploration, always seeking new ways to innovate, strengthen my skills, and grow through hands-on practice."
   ],
- 
-  "links": [
-    { "title": "GitHub", "description": "Projects, laboratories, and code repositories", "url": "ADD_YOUR_GITHUB_URL", "icon": "⌘" },
-    { "title": "LinkedIn", "description": "Professional profile and career updates", "url": "ADD_YOUR_LINKEDIN_URL", "icon": "in" },
-    { "title": "TryHackMe", "description": "Cybersecurity learning paths and practical laboratories", "url": "ADD_YOUR_TRYHACKME_URL", "icon": "🎯" },
-    { "title": "Credly", "description": "Verified professional badges and certifications", "url": "ADD_YOUR_CREDLY_URL", "icon": "🏅" }
-  ],
+  "languages": [],
   "skills": [
     { "category": "Cybersecurity", "tags": ["Defensive Security", "Offensive Security", "Vulnerability Management", "Security Engineering", "Incident Response", "Threat Analysis", "Security Automation"] },
-    { "category": "Cloud Security", "tags": ["AWS", "Microsoft Azure", "Identity and Access Management", "Cloud Security Fundamentals", "Security Monitoring", "Cloud Misconfigurations"] },
-    { "category": "Security Operations", "tags": ["SIEM", "EDR", "XDR", "SOC Operations", "Alert Investigation", "Detection Engineering", "Agentic SOC"] },
-    { "category": "Offensive Security", "tags": ["Network Enumeration", "Web Security Fundamentals", "Privilege Escalation", "Active Directory Fundamentals", "Penetration Testing", "Red Teaming Fundamentals"] },
-    { "category": "Data Engineering", "tags": ["Data Pipelines", "ETL", "Data Processing", "Data Analysis", "SQL", "Python", "Automation"] },
-    { "category": "Artificial Intelligence", "tags": ["Machine Learning", "Computer Vision", "Natural Language Processing", "Generative AI", "Agentic AI", "AI for Cybersecurity", "Agentic Red Teaming"] }
+    { "category": "Cloud Security", "tags": ["AWS", "Microsoft Azure", "Identity and Access Management", "Security Monitoring", "Cloud Misconfigurations"] },
+    { "category": "Security Operations", "tags": ["SIEM", "EDR", "SOC Operations", "Alert Investigation", "Detection Engineering", "Agentic SOC"] },
+    { "category": "Data Engineering & AI", "tags": ["Data Pipelines", "ETL", "SQL", "Python", "Machine Learning", "Natural Language Processing", "Generative AI"] }
   ],
-  "certifications": [
-    { "shortName": "eJPT", "fullName": "eLearnSecurity Junior Penetration Tester", "issuer": "INE Security", "credentialUrl": "ADD_EJPT_CREDENTIAL_URL", "examUrl": "https://security.ine.com/certifications/ejpt-certification/", "badgeImage": "images/badges/ejpt.png", "featured": true },
-    { "shortName": "AWS MLA-C01", "fullName": "AWS Certified Machine Learning Engineer – Associate", "issuer": "Amazon Web Services", "credentialUrl": "ADD_AWS_ML_CREDENTIAL_URL", "examUrl": "https://aws.amazon.com/certification/certified-machine-learning-engineer-associate/", "badgeImage": "images/badges/aws-ml-associate.png", "featured": true },
-    { "shortName": "AWS AIF-C01", "fullName": "AWS Certified AI Practitioner", "issuer": "Amazon Web Services", "credentialUrl": "ADD_AWS_AI_PRACTITIONER_CREDENTIAL_URL", "examUrl": "https://aws.amazon.com/certification/certified-ai-practitioner/", "badgeImage": "images/badges/aws-ai-practitioner.png", "featured": true },
-    { "shortName": "Google AI", "fullName": "ADD_EXACT_GOOGLE_AI_CERTIFICATION_NAME", "issuer": "Google", "credentialUrl": "ADD_GOOGLE_AI_CREDENTIAL_URL", "examUrl": "ADD_GOOGLE_AI_OFFICIAL_URL", "badgeImage": "images/badges/google-ai.png", "featured": true }
-  ],
-  "issuerLogos": {
-    "INE Security": { "src": "images/brands/ine-security.png", "cvSrc": "images/brands/ine-security-cv.png" },
-    "Amazon Web Services": { "src": "images/brands/aws.png", "cvSrc": "images/brands/aws-cv.png" },
-    "Google": { "src": "images/brands/google.png", "cvSrc": "images/brands/google-cv.png" }
-  },
   "experience": [
-    { "title": "Data Engineer", "company": "Endava", "location": "Romania", "startDate": "ADD_START_DATE", "endDate": "Present", "current": true, "responsibilities": ["ADD_YOUR_FIRST_DATA_ENGINEERING_RESPONSIBILITY", "ADD_YOUR_SECOND_DATA_ENGINEERING_RESPONSIBILITY", "ADD_TECHNOLOGIES_OR_PLATFORMS_USED", "ADD_A_MEASURABLE_RESULT_OR_PROJECT_IMPACT"] },
-    { "title": "ADD_PREVIOUS_JOB_TITLE", "company": "ADD_PREVIOUS_COMPANY", "location": "ADD_LOCATION", "startDate": "ADD_START_DATE", "endDate": "ADD_END_DATE", "current": false, "responsibilities": ["ADD_RESPONSIBILITY", "ADD_RESPONSIBILITY", "ADD_PROJECT_OR_RESULT"] }
+    { "title": "Data Engineer in a Cybersecurity-focused team | AI & Security Automation", "company": "Endava", "location": "Romania", "startDate": "January 2026", "endDate": "July 2026", "responsibilities": ["Selected to join the Cyber Security POD and work on internal Cyber Security initiatives supporting security maturity assessments, application security, vulnerability management, and secure software development processes.", "Designed and developed an AI-powered VDR Data Cataloging Tool that processes and organizes multi-format document collections, generates summaries and semantic search, applies content-based governance tagging, maps documents to policies, and identifies coverage gaps to support OWASP SAMM assessments, due diligence, and faster document reviews.", "Tested and reviewed the VDR Data Cataloging Tool using SonarQube, Burp Suite, Black Duck SCA, Gitleaks and Semgrep.", "Conducted research for internal initiatives on Microsoft Purview, Wiz Cloud Security Platform, Claude Code sandboxing, Agentic SOC, and Agentic Red Teaming.", "Participated in Endava's Security Champions Training Program and completed hands-on security training through the SecureFlag platform."] },
+    { "title": "Data Engineer - DavaX Academy", "company": "Endava", "location": "Romania", "startDate": "May 2025", "endDate": "December 2025", "responsibilities": ["Completed a structured training programme covering Data & AI (Machine Learning, Generative AI, Prompt Engineering, MLOps), Cloud technologies, Python Development, DevOps, Security Testing, and AI Testing.", "After completing the programme, I joined the Data & AI discipline."] },
+    { "title": "Frontend Development Bootcamp", "company": "Pentalog", "location": "Romania", "startDate": "July 2024", "endDate": "July 2024", "responsibilities": ["Designed and developed the frontend interface of a booking application wireframe, ensuring responsive web design.", "Implemented responsive user interfaces using HTML, CSS and JavaScript. Applied React.js concepts, DOM manipulation and UI/UX design principles."] },
+    { "title": "Full-Stack Software Engineer Intern", "company": "Kronsoft Development", "location": "Romania", "startDate": "July 2023", "endDate": "November 2023", "responsibilities": ["Collaborated in the development of ONG Manager, a full-stack application designed to help NGOs manage projects, events, volunteers and reporting activities.", "Implemented backend functionalities using Java, Spring Boot, JPA and Hibernate integrated with PostgreSQL. Developed frontend components using Angular, Ionic, NgRx, HTML, CSS and JavaScript."] }
   ],
   "education": [
-    { "degree": "EIT Digital Master School – Cybersecurity", "school": "University of Twente", "location": "Netherlands", "startYear": "ADD_START_YEAR", "endYear": "ADD_END_YEAR", "status": "Current" },
-    { "degree": "ADD_PREVIOUS_DEGREE", "school": "ADD_UNIVERSITY", "location": "ADD_LOCATION", "startYear": "ADD_START_YEAR", "endYear": "ADD_END_YEAR", "status": "Completed" }
+    { "degree": "EIT Digital Master School | Double Master's Degree in Cyber Security", "school": "University of Twente", "location": "The Netherlands", "startYear": "2025", "endYear": "2027", "status": "Current", "details": "Exit University: University of Twente, the Netherlands (Current) · Entry University: Babeș-Bolyai University, Cluj-Napoca, Romania" },
+    { "degree": "Bachelor's in Mathematics & Computer Science", "school": "Babeș-Bolyai University", "location": "Romania", "startYear": "2022", "endYear": "2025", "status": "Completed" }
   ],
   "projects": [
-    { "title": "VDR Document Anonymisation and Redaction", "category": "Cybersecurity Engineering", "description": "A document anonymisation and redaction application for identifying and masking sensitive information while preserving document structure.", "technologies": ["Python", "Streamlit", "Microsoft Presidio", "PII Detection"], "url": "ADD_PROJECT_URL", "featured": true },
-    { "title": "Agentic SOC Research", "category": "AI for Cybersecurity", "description": "Research into agentic AI architectures for SOC automation, alert investigation, response planning, and secure autonomous agents.", "technologies": ["Agentic AI", "SOC Automation", "SIEM", "Cybersecurity Research"], "url": "ADD_PROJECT_OR_DOCUMENT_URL", "featured": true }
+    { "title": "Microsoft Sentinel - SOC Operations", "category": "Cloud Security", "description": "Built a cloud-based SOC monitoring environment in Microsoft Azure using Microsoft Sentinel, Log Analytics Workspace, Data Collection Endpoint, Data Collection Rules, and Azure Monitor Agent. Validated telemetry with KQL, created analytics rules for failed RDP logins, suspicious PowerShell, SSH brute force, and impossible-location logins, and implemented SOAR workflows with Sentinel Playbooks and Logic Apps.", "technologies": ["Microsoft Azure", "Microsoft Sentinel", "KQL", "SOAR", "Logic Apps"] },
+    { "title": "Enterprise SOC Monitoring & Threat Detection HomeLab", "category": "Security Operations", "description": "Built a virtual enterprise SOC lab using VMware, pfSense, Splunk Enterprise, Windows Server Active Directory, Windows Client, Kali Linux, Sysmon, and Splunk Universal Forwarder. Configured Windows and Sysmon telemetry collection and detection workflows mapped to MITRE ATT&CK.", "technologies": ["Splunk", "VMware", "pfSense", "Active Directory", "MITRE ATT&CK"] },
+    { "title": "BacHub - From Classical to Transformer-Based Techniques", "category": "Bachelor's Thesis", "description": "Cross-platform platform for classification, recommendation, and personalized test generation of Romanian Baccalaureate mathematics exercises. A curated dataset of over 19,000 exercises across 18 classes supported comparisons of Machine Learning, Deep Learning, and Transformer models; GRU with self-attention achieved 96.04% classification accuracy.", "technologies": ["Python", "NLP", "Machine Learning", "Deep Learning", "Transformers"] }
   ]
 }

@@ -885,7 +885,7 @@ h1.hero-name {
   width: 100%;
   background-color: #111827;
   padding-top: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 28px;
 }
 section[id] {
   scroll-margin-top: calc(var(--header-height) + 20px);
@@ -945,7 +945,7 @@ section {
 .about-layout {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  gap: 0;
 }
 .about-content {
   width: 100%;
@@ -1272,7 +1272,9 @@ footer {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 48px 2rem;
+  padding: 48px 2rem 36px;
+  max-width: none;
+  background: #111827;
 }
 #contact .section-header {
   display: flex;
@@ -1303,6 +1305,12 @@ footer {
 .contact-info {
   width: 100%;
   max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  text-align: center;
+  background: #121f36;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 8px;
 }
 .contact-text p {
   max-width: none;
@@ -1315,7 +1323,7 @@ footer {
 .contact-links {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
 }
 .contact-link {
@@ -1330,7 +1338,7 @@ footer {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  font-family: "JetBrains Mono", monospace;
+  font-family: var(--font-sans);
   transition: all 0.3s ease;
 }
 .contact-link:hover {
@@ -1351,14 +1359,14 @@ footer {
   padding: 2rem;
   text-align: center;
   border-top: 1px solid var(--border-color);
-  background: var(--bg-primary);
-  color: var(--text-dim);
-  font-family: "JetBrains Mono", monospace;
+  background: #111827;
+  color: #899395;
+  font-family: var(--font-sans);
   font-size: 0.85rem;
 }
 footer p {
   margin: 0;
-  color: var(--text-dim);
+  color: #899395;
 }
 @media (max-width: 768px) {
   #contact {
