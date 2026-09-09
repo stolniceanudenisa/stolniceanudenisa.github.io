@@ -1222,7 +1222,7 @@ section {
   font-size: 14px;
 }
 .project-card .category {
-  color: var(--purple);
+  color: #60a5fa;
   font:
     10px var(--font-mono),
     monospace;
@@ -1534,6 +1534,7 @@ footer p {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
+  align-items: start;
 }
 .certificate-card {
   display: flex;
@@ -1576,7 +1577,6 @@ footer p {
 .certificate-content {
   display: flex;
   flex-direction: column;
-  flex: 1;
   padding: 1.5rem;
 }
 .certificate-content h3 {

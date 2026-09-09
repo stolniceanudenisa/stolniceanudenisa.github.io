@@ -222,7 +222,7 @@
       .join("");
     // Certification cards remain editable placeholders until their final data is supplied.
     $("#experienceTimeline").innerHTML = list(profile.experience)
-      .filter((item) => publicValue(item.title) || publicValue(item.company))
+      .filter((item) => !item.hidden && (publicValue(item.title) || publicValue(item.company)))
       .map(
         (item) =>
           `<article class="experience-item"><h3>${escapeHtml(publicValue(item.title))}</h3><div class="meta">${escapeHtml(publicValue(item.company))}${publicValue(item.location) ? ` · ${escapeHtml(publicValue(item.location))}` : ""}${range(item) ? ` · ${escapeHtml(range(item))}` : ""}</div>${
