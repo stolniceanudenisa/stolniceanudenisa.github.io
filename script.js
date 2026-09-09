@@ -220,16 +220,6 @@
           `<div class="language">${escapeHtml(item.name || "")} · ${escapeHtml(item.level || "")}</div>`,
       )
       .join("");
-    $("#skillsGrid").innerHTML = list(profile.skills)
-      .map(
-        (skill) =>
-          `<article class="skill-category"><h3>${escapeHtml(skill.category || "")}</h3><div>${list(
-            skill.tags,
-          )
-            .map((tag) => `<span class="skill-tag">${escapeHtml(tag)}</span>`)
-            .join("")}</div></article>`,
-      )
-      .join("");
     // Certification cards remain editable placeholders until their final data is supplied.
     $("#experienceTimeline").innerHTML = list(profile.experience)
       .filter((item) => publicValue(item.title) || publicValue(item.company))
@@ -247,7 +237,7 @@
       .join("");
     $("#projectsGrid").innerHTML = list(profile.projects)
       .filter((item) => publicValue(item.title))
-      .map((item) => `<article class="project-card"><div class="project-content"><h3 class="project-title">${escapeHtml(publicValue(item.title))}</h3>${publicValue(item.category) ? `<p class="category">${escapeHtml(publicValue(item.category))}</p>` : ""}<p class="project-description">${escapeHtml(publicValue(item.description))}</p><div class="project-tags">${list(item.technologies).map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`).join("")}</div></div></article>`)
+      .map((item) => `<article class="project-card"><div class="project-content"><h3 class="project-title">${item.link ? `<a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">${escapeHtml(publicValue(item.title))}</a>` : escapeHtml(publicValue(item.title))}</h3>${publicValue(item.category) ? `<p class="category">${escapeHtml(publicValue(item.category))}</p>` : ""}<p class="project-description">${escapeHtml(publicValue(item.description))}</p><div class="project-tags">${list(item.technologies).map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`).join("")}</div></div></article>`)
       .join("");
     const contacts = [
       ["Email", profile.email, profile.email && `mailto:${profile.email}`],

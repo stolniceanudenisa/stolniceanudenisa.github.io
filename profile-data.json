@@ -1,8 +1,8 @@
 {
   "name": "Denisa-Elena Stolniceanu",
   "title": "Data Engineering & Cybersecurity",
-  "heroRolePrimary": "Cybersecurity Enthusiast",
-  "heroRoleSecondary": "Data Engineer",
+  "heroRolePrimary": "Penetration Tester practitioner",
+  "heroRoleSecondary": "Cybersecurity Enthusiast",
   "heroDescription": "I am constantly expanding my knowledge in security operations, cybersecurity engineering, threat detection, incident response, cloud security, vulnerability management, identity security, and security automation.",
   "location": "Romania",
   "email": "stolniceanudenisa@yahoo.com",
@@ -31,12 +31,12 @@
     { "title": "Full-Stack Software Engineer Intern", "company": "Kronsoft Development", "location": "Romania", "startDate": "July 2023", "endDate": "November 2023", "responsibilities": ["Collaborated in the development of ONG Manager, a full-stack application designed to help NGOs manage projects, events, volunteers and reporting activities.", "Implemented backend functionalities using Java, Spring Boot, JPA and Hibernate integrated with PostgreSQL. Developed frontend components using Angular, Ionic, NgRx, HTML, CSS and JavaScript."] }
   ],
   "education": [
-    { "degree": "EIT Digital Master School | Double Master's Degree in Cyber Security", "school": "University of Twente", "location": "The Netherlands", "startYear": "2025", "endYear": "2027", "status": "Current", "details": "Exit University: University of Twente, the Netherlands (Current) · Entry University: Babeș-Bolyai University, Cluj-Napoca, Romania" },
-    { "degree": "Bachelor's in Mathematics & Computer Science", "school": "Babeș-Bolyai University", "location": "Romania", "startYear": "2022", "endYear": "2025", "status": "Completed" }
+    { "degree": "Double Master's Degree in Cyber Security", "school": "EIT Digital Master School", "location": "", "startYear": "2025", "endYear": "2027", "status": "", "details": "Exit University: University of Twente, Enschede, the Netherlands (2026-2027) · Entry University: Babeș-Bolyai University, Cluj-Napoca, Romania (2025-2026)" },
+    { "degree": "Bachelor's in Mathematics & Computer Science", "school": "Babeș-Bolyai University, Romania", "location": "", "startYear": "2022", "endYear": "2025", "status": "" }
   ],
   "projects": [
     { "title": "Microsoft Sentinel - SOC Operations", "category": "Cloud Security", "description": "Built a cloud-based SOC monitoring environment in Microsoft Azure using Microsoft Sentinel, Log Analytics Workspace, Data Collection Endpoint, Data Collection Rules, and Azure Monitor Agent. Validated telemetry with KQL, created analytics rules for failed RDP logins, suspicious PowerShell, SSH brute force, and impossible-location logins, and implemented SOAR workflows with Sentinel Playbooks and Logic Apps.", "technologies": ["Microsoft Azure", "Microsoft Sentinel", "KQL", "SOAR", "Logic Apps"] },
     { "title": "Enterprise SOC Monitoring & Threat Detection HomeLab", "category": "Security Operations", "description": "Built a virtual enterprise SOC lab using VMware, pfSense, Splunk Enterprise, Windows Server Active Directory, Windows Client, Kali Linux, Sysmon, and Splunk Universal Forwarder. Configured Windows and Sysmon telemetry collection and detection workflows mapped to MITRE ATT&CK.", "technologies": ["Splunk", "VMware", "pfSense", "Active Directory", "MITRE ATT&CK"] },
-    { "title": "BacHub - From Classical to Transformer-Based Techniques", "category": "Bachelor's Thesis", "description": "Cross-platform platform for classification, recommendation, and personalized test generation of Romanian Baccalaureate mathematics exercises. A curated dataset of over 19,000 exercises across 18 classes supported comparisons of Machine Learning, Deep Learning, and Transformer models; GRU with self-attention achieved 96.04% classification accuracy.", "technologies": ["Python", "NLP", "Machine Learning", "Deep Learning", "Transformers"] }
+    { "title": "BacHub - From Classical to Transformer-Based Techniques", "category": "Bachelor's Thesis", "description": "Cross-platform platform for classification, recommendation, and personalized test generation of Romanian Baccalaureate mathematics exercises. A curated dataset of over 19,000 exercises across 18 classes supported comparisons of Machine Learning, Deep Learning, and Transformer models; GRU with self-attention achieved 96.04% classification accuracy.", "technologies": ["Python", "NLP", "Machine Learning", "Deep Learning", "Transformers"], "link": "https://github.com/stolniceanudenisa/student-scientific-communications-session-bachelor/blob/main/SCSS_Stolniceanu_Denisa_Elena.pdf" }
   ]
 }
