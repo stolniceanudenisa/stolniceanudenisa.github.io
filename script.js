@@ -266,9 +266,7 @@
     const toggle = $("#navigationToggle"),
       menu = $("#navigationLinks"),
       links = [...document.querySelectorAll('.navigation-links a[href^="#"]')],
-      sections = links
-        .map((link) => $(link.getAttribute("href")))
-        .filter(Boolean);
+      sections = [...document.querySelectorAll(".portfolio-section")];
     const close = () => {
       menu.classList.remove("menu-open");
       toggle.setAttribute("aria-expanded", "false");
