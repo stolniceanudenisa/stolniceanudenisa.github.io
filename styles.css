@@ -1472,11 +1472,13 @@ footer p {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
-  align-items: start;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
 }
 .certificate-card {
   display: flex;
   flex-direction: column;
+  height: 100%;
   min-width: 0;
   overflow: hidden;
   background: #1f2937;
@@ -1521,14 +1523,15 @@ footer p {
   margin: 0 0 0.75rem;
   color: #ffffff;
   font-family: var(--font-sans);
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   line-height: 1.4;
 }
 .certificate-issuer,
 .certificate-description {
   color: #9ca3af;
   font-family: var(--font-sans);
+  font-size: 0.85rem;
 }
 .certificate-issuer {
   margin: 0 0 0.75rem;
