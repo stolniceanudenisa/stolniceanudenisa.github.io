@@ -258,7 +258,7 @@
       )
       .map(
         ([label, value, href]) =>
-          `<div class="contact-card"><strong>${label}</strong>${href ? `<a href="${escapeHtml(label === "Email" ? href : external(href))}" ${label !== "Email" ? 'target="_blank" rel="noopener noreferrer"' : ""}>${escapeHtml(value)}</a>` : `<span>${escapeHtml(value)}</span>`}</div>`,
+          `<article class="experience-item"><h3>${escapeHtml(label)}</h3><div class="meta">${href ? `<a href="${escapeHtml(label === "Email" ? href : external(href))}" ${label !== "Email" ? 'target="_blank" rel="noopener noreferrer"' : ""}>${escapeHtml(value)}</a>` : escapeHtml(value)}</div></article>`,
       )
       .join("");
   };
