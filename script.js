@@ -242,13 +242,6 @@
     const contacts = [
       ["Email", profile.email, profile.email && `mailto:${profile.email}`],
       ["LinkedIn", profile.linkedin, profile.linkedin],
-      ["GitHub", profile.github, profile.github],
-      ["Location", profile.location, ""],
-      [
-        "Website",
-        profile.website,
-        profile.website && external(profile.website),
-      ],
     ];
     const contactDetails = $("#contactDetails");
     if (contactDetails) contactDetails.innerHTML = contacts

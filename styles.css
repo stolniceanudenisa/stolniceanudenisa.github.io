@@ -1520,6 +1520,7 @@ footer p {
 .certificate-content h3 {
   margin: 0 0 0.75rem;
   color: #ffffff;
+  font-family: var(--font-sans);
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1.4;
@@ -1527,6 +1528,7 @@ footer p {
 .certificate-issuer,
 .certificate-description {
   color: #9ca3af;
+  font-family: var(--font-sans);
 }
 .certificate-issuer {
   margin: 0 0 0.75rem;
